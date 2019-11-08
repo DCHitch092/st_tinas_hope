@@ -1,6 +1,8 @@
 require_relative('../models/vet')
 require('pry')
 
+Vet.delete_all()
+
 vet1 = Vet.new(
   { 'name' => 'Nurse Elmo',
     'role' => 'Nurse',
@@ -18,4 +20,4 @@ vet2.save()
 
 binding.pry
 
-nil 
+nil

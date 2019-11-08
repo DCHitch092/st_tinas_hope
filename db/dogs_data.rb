@@ -1,4 +1,5 @@
 require_relative('../models/vet')
+require('pry')
 
 vet1 = Vet.new(
   { 'name' => 'Nurse Elmo',
@@ -14,3 +15,7 @@ vet2 = Vet.new(
 
 vet1.save()
 vet2.save()
+
+binding.pry
+
+nil 

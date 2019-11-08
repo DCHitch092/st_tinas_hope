@@ -24,4 +24,15 @@ class Vet
     @id = result['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE vets SET
+    name = $1,
+    role = $2,
+    fav_colour = $3,
+    profile_image = $4,
+    id = $5"
+    values = [ @name, @role, @fav_colour, @profile_image, @id]
+    SqlRunner.run(  sql, values)
+  end 
+
 end

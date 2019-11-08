@@ -31,8 +31,17 @@ class Vet
     fav_colour = $3,
     profile_image = $4,
     id = $5"
-    values = [ @name, @role, @fav_colour, @profile_image, @id]
-    SqlRunner.run(  sql, values)
-  end 
+    values = [ @name, @role, @fav_colour, @profile_image, @id ]
+    SqlRunner.run(  sql, values )
+  end
+
+  def delete()
+    sql = "DELETE FROM vets
+    WHERE id = $1"
+    values = [ @id ]
+    SqlRunner.run(  sql, values )
+  end
+
+  
 
 end

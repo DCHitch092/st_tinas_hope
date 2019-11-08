@@ -1,4 +1,4 @@
 get '/vets' do
-  @vets = Vets.all
+  @vets = Vet.all
   erb(:'vets/index')
 end

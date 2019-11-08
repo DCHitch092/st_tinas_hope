@@ -47,4 +47,10 @@ class Vet
     SqlRunner.run( sql )
   end
 
+  def self.all()
+    sql = "SELECT * FROM vets"
+    result = SqlRunner.run(sql)
+    return result.map{ |vet|  Vet.new(vet)}
+  end
+
 end

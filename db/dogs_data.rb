@@ -12,7 +12,7 @@ vet1 = Vet.new(
 vet2 = Vet.new(
   { 'name' => 'Nurse ChumChi',
     'role' => 'Nurse',
-    'fav_colour' => '',
+    'fav_colour' => 'orange',
     'profile_image' => 'nurse_chumchi.png'})
 
 vet1.save()

@@ -1,4 +1,5 @@
 require ('pg')
+require_relative('../db/sql_runner')
 
 class Vet
 
@@ -11,5 +12,5 @@ class Vet
     @fav_colour = options['fav_colour']
     @profile_image = options['profile_image']
   end
-  
+
 end

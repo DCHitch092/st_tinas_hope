@@ -1,0 +1,5 @@
+<ul id="vets_table">
+  <% for vet in @vets %>
+    <li><%= vet.profile_image %><h2><%= vet.name %></h2><p><%= vet.role %></p></li>
+    <% end %>
+</ul>

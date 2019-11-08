@@ -22,7 +22,6 @@ class Vet
     values = [ @name, @role, @fav_colour, @profile_image ]
     result = SqlRunner.run( sql, values)[0]
     @id = result['id'].to_i
-
   end
 
 end

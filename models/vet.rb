@@ -42,6 +42,9 @@ class Vet
     SqlRunner.run(  sql, values )
   end
 
-  
+  def self.delete()
+    sql = "DELETE FROM vets"
+    SqlRunner.run( sql )
+  end
 
 end

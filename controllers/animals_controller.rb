@@ -24,3 +24,8 @@ post '/animals' do #create
   @new_animal.new_animal()
   erb(:'animals/create')
 end
+
+post '/animals/:id' do #update
+  Animal.new(params).update()
+  erb(:'animals/update')
+end

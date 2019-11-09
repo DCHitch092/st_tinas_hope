@@ -18,3 +18,8 @@ get '/humans/:id/edit' do #edit
   @human = Human.find(@human_id)
   erb(:'humans/edit')
 end
+
+post '/humans/:id' do #update
+  Human.new(params).update()
+  erb(:'humans/update')
+end

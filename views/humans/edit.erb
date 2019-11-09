@@ -5,15 +5,18 @@
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="
       <%= @human['name'] %>">
+
     <label for="address">Address:</label>
-    <textarea rows = "5" cols = "60" name = "address" value="
-      <%= @human['name'] %>"></textarea>
+    <textarea rows = "5" cols = "60" name = "address" value=""><%= @human['address'] %></textarea>
+
     <label for="fav-colour">Favourite Colour:</label>
     <input type="color" id="fav-colour" name="fav_colour" value="
-      <%= @human['name'] %>">
+      <%= @human['fav_colour'] %>">
+
     <label for="phone">Phone:</label>
     <input type="tel" id="phone" name="phone" value="
       <%= @human['phone'] %>">
+
     <label for="email">E-mail:</label>
     <input type="email" id="email" name="email" value="
       <%= @human['email'] %>">

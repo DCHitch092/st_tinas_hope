@@ -11,7 +11,7 @@ class Human
     @email = options['email']
     @address = options['address']
     @phone = options['phone']
-    @fav_colour = options['fav_colour']
+    @fav_colour = options['fav_colour'].to_str
   end
 
   def save()
@@ -25,10 +25,31 @@ class Human
     @id = result['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE humans SET
+    name = $1,
+    email = $2,
+    address = $3,
+    phone = $4,
+    fav_colour = $5
+    WHERE id = $6"
+    values = [@name, @email, @address, @phone, @fav_colour, @id]
+    SqlRunner.run(  sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM humans
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run( sql, values)[0]
+    return result
+  end
+
   def self.delete_all()
     sql = "DELETE FROM humans"
     SqlRunner.run(sql)
   end
+
 
   def self.all()
     sql = "SELECT * FROM humans"

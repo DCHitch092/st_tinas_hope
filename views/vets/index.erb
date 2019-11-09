@@ -1,7 +1,7 @@
 <div>
   <ul id="vets_table">
   <% for vet in @vets %>
-    <li><a href="/vets/<%= vet.id %>"><%= vet.profile_image %></a><a href="/vets/<%= vet.id %>"><h2><%= vet.name %></h2></a><p><%= vet.role %></p><p><a href="/vets/<%= vet.id %>/edit">Edit Vet</a></p></li><hr>
+    <li><a href="/vets/<%= vet.id %>"><%= vet.profile_image %></a><a href="/vets/<%= vet.id %>"><h2><%= vet.name %></h2></a><p><%= vet.role %></p><p><a href="/vets/<%= vet.id %>/edit">Edit Vet</a></p><hr></li>
     <% end %>
   </ul>
 </div>

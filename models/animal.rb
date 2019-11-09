@@ -55,7 +55,7 @@ class Animal
 
   def self.all()
     sql = "SELECT * FROM animals"
-    result = SqlRunner.run(  sql, values)[0]
+    result = SqlRunner.run(  sql)
     return result.map{ |animal| Animal.new(animal)}
   end
 

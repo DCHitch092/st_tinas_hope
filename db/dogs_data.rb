@@ -3,6 +3,7 @@ require_relative('../models/animal')
 require('pry')
 
 Vet.delete_all()
+Animal.delete_all()
 
 vet1 = Vet.new(
   { 'name' => 'Nurse Elmo',
@@ -24,14 +25,14 @@ animal1 = Animal.new(
     'date_of_birth' => '2013/05/15',
     'type' =>  'dog',
     'fav_colour' => 'purple',
-    'age' => '6'})
+    'age' => 6})
 
 animal2 = Animal.new(
   { 'name' => 'PaPaPiPi-Pu',
     'date_of_birth' => '2013/05/15',
     'type' =>  'dog',
     'fav_colour' => 'blue',
-    'age' => '6'})
+    'age' => 6})
 
 animal1.save()
 animal2.save()

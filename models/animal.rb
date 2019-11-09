@@ -45,6 +45,12 @@ class Animal
     SqlRunner.run( sql, values)
   end
 
+  def all()
+    sql = "SELECT * FROM animals"
+    result = SqlRunner.run(  sql, values)[0]
+    return result.map{ |animal| Animal.new(animal)}
+  end
+
   def self.delete_all()
     sql = "DELETE FROM animals"
     SqlRunner.run( sql)

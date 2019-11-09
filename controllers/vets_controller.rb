@@ -13,7 +13,7 @@ get '/vets/:id' do #show
   erb(:'vets/show')
 end
 
-get 'vets/:id/edit' do #edit
+get '/vets/:id/edit' do #edit
   @vet_id = params[:id]
   @vet = Vet.find(@vet_id)
   erb(:'vets/edit')

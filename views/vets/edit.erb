@@ -1,5 +1,5 @@
 <div class="edit_form">
-  <form class="vets" action="/vets" method="post">
+  <form class="vets" action="/vets/<%= @vet['id'] %>" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="<%= @vet['name'] %>">
     <label for="name">Role:</label>

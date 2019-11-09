@@ -29,7 +29,8 @@ class Vet
     name = $1,
     role = $2,
     fav_colour = $3,
-    profile_image = $4,
+    profile_image = $4
+    WHERE
     id = $5"
     values = [ @name, @role, @fav_colour, @profile_image, @id ]
     SqlRunner.run(  sql, values )

@@ -24,3 +24,8 @@ post '/vets' do #create
   @new_vet.save()
   erb(:'vets/create')
 end
+
+post '/vets/:id' do #update
+  Vet.new(params).update()
+  erb(:'vets/update')
+end

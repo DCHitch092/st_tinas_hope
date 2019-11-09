@@ -1,17 +1,53 @@
-<nav>
-  <a href="/animals/new">Add New Animal</a>
-</nav>
-
 <div>
-  <ul id="animals_table">
-  <% for animal in @animals %>
-    <li>
-      <a href="/animals/<%= animal.id %>"><h2><%= animal.name %></h2></a>
-      <p><%= animal.type %></p>
-      <p><% @up_to_date_age = animal.get_age() %><%= @up_to_date_age %>(<%= animal.date_of_birth %>)</p>
-      <p><%= animal.fav_colour %></p>
-      <!-- <p><a href="/animals/<%= animal.id %>/edit">Edit Animal</a></p> -->
-      <hr></li>
-    <% end %>
-  </ul>
+  <table id="animals_table">
+    <tr>
+      <td colspan="2">name</td>
+      <td colspan="1">type</td>
+      <td colspan="1">age</td>
+      <td colspan="2">date of birth</td>
+      <td colspan="2">favourite colour</td>
+      <td colspan="1"></td>
+      <td colspan="1"></td>
+    </tr>
+    <% for animal in @animals %>
+    <tr>
+      <td colspan="2">
+        <a href="/animals/<%= animal.id %>">
+          <p><%= animal.name %></p>
+        </a>
+      </td>
+      <td colspan="1">
+        <p><%= animal.type %></p>
+      </td>
+      <td colspan="1">
+        <p><% @up_to_date_age = animal.get_age() %>
+          <%= @up_to_date_age %></p>
+      </td>
+      <td colspan="2">
+        <p><%= animal.date_of_birth %></p>
+      </td>
+      <td colspan="2">
+        <p><%= animal.fav_colour %></p>
+      </td>
+      <td colspan="1">
+        <a href="/animals/<%= animal.id %>/edit">edit</a>
+      </td>
+      <td colspan="1">
+        <a href="/animals/<%= animal.id %>/delete">delete</a>
+      </td>
+
+    </tr>
+      <% end %>
+    <tr>
+      <td colspan="10">
+        <a href="/animals/new">
+          <p>Add New Animal</p>
+        </a>
+      </td>
+    </tr>
+  </table>
+    <!-- <li> -->
+
+    <!-- <p><a href="/animals/<%= animal.id %>/edit">Edit Animal</a></p> -->
+      <!-- <hr></li> -->
 </div>

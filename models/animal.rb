@@ -35,9 +35,19 @@ class Animal
     WHERE
     id = $6"
     values = [@name, @date_of_birth, @type, @fav_colour, @age, @id]
-    SqlRunner.run(sql, values)
+    SqlRunner.run( sql, values)
   end
-  
 
+  def delete()
+    sql = "DELETE FROM animals
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM animals"
+    SqlRunner.run( sql)
+  end
 
 end

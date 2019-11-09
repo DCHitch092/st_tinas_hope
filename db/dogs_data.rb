@@ -1,5 +1,6 @@
 require_relative('../models/vet')
 require_relative('../models/animal')
+require_relative('../models/human')
 require('pry')
 
 Vet.delete_all()
@@ -36,6 +37,23 @@ animal2 = Animal.new(
 
 animal1.save()
 animal2.save()
+
+human1 = Human.new({
+  'name' => 'Hitch',
+  'email' => 'hitch@hitch.com',
+  'address' => '123 Hitch Town',
+  'phone' => '+4477222222',
+  'fav_colour' => 'Red'})
+
+human2 = Human.new({
+  'name' => 'Maz',
+  'email' => 'maz@hitch.com',
+  'address' => '124 Maz Village',
+  'phone' => '+44772122222',
+  'fav_colour' => 'Aqua Marine'})
+
+human1.save()
+human2.save()
 
 # binding.pry
 #

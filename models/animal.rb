@@ -25,6 +25,15 @@ class Animal
     @id = result['id'].to_i
   end
 
+  def new_animal()
+    if @age != nil && @date_of_birth == nil
+      @date_of_birth = self.get_dob
+    else
+    @age = self.get+age
+    end
+    self.save()
+  end
+
   def update()
     sql = "UPDATE animals SET
     name = $1,

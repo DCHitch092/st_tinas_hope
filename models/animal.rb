@@ -25,5 +25,19 @@ class Animal
     @id = result['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE animals SET
+    name = $1,
+    date_of_birth = $2,
+    type = $3,
+    fav_colour = $4,
+    age = $5
+    WHERE
+    id = $6"
+    values = [@name, @date_of_birth, @type, @fav_colour, @age, @id]
+    SqlRunner.run(sql, values)
+  end
+  
+
 
 end

@@ -1,7 +1,7 @@
 require('pg')
 require_relative('../db/sql_runner')
 
-class Dog
+class Animal
 
   attr_reader :id, :name, :date_of_birth, :type, :fav_colour, :age
 

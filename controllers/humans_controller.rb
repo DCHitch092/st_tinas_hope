@@ -9,5 +9,6 @@ end
 
 post '/humans' do #create
   human = Human.new(params)
+  human.save()
   erb(:'humans/create')
-end 
+end

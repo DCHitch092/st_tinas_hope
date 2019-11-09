@@ -8,8 +8,8 @@ get '/vets/new' do #new
 end
 
 get '/vets/:id' do #show
-  vet_id = params[:id]
-  @Vet = Vet.find(vet_id)
+  @vet_id = params[:id]
+  @vet = Vet.find(@vet_id)
   erb(:'vets/show')
 end
 

@@ -5,4 +5,10 @@ end
 
 get '/animals/new' do #new
   erb(:'animals/new')
-end 
+end
+
+post '/animals' do #create
+  @new_animal = Animal.new(params)
+  @new_animal.save() 
+  erb(:'animals/create')
+end

@@ -12,9 +12,9 @@ This is where the associated animals will be listed.
 <!-- <p><a href="/humans/<%= @human['id'] %>/edit">Add Associated Pet</a></p> -->
 
 <p><a href="/humans/<%= @human['id'] %>/edit">Edit human</a></p>
+<p><a href="/humans"><< back to all humans</a>
+</p>
 
-<a href="/humans"><< back to all humans</a>
 <form action="/humans/<%= @human['id'] %>/delete" method="post">
   <button type="submit" name="button">Delete human</button>
-
 </form>

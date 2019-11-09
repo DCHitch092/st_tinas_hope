@@ -29,3 +29,9 @@ post '/humans/:id' do #update
   Human.new(params).update()
   erb(:'humans/update')
 end
+
+post '/humans/:id/delete' do #delete
+  human_id = params[:id]
+  Human.delete(human_id)
+  redirect to '/humans'
+end

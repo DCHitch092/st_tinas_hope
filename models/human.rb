@@ -37,6 +37,13 @@ class Human
     SqlRunner.run(  sql, values)
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM humans
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values)
+  end
+
   def self.find(id)
     sql = "SELECT * FROM humans
     WHERE id = $1"
@@ -49,7 +56,6 @@ class Human
     sql = "DELETE FROM humans"
     SqlRunner.run(sql)
   end
-
 
   def self.all()
     sql = "SELECT * FROM humans"

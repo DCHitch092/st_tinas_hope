@@ -49,12 +49,12 @@ class Animal
     SqlRunner.run( sql, values)
   end
 
-  def delete()
-    sql = "DELETE FROM animals
-    WHERE id = $1"
-    values = [@id]
-    SqlRunner.run( sql, values)
-  end
+  # def delete()
+  #   sql = "DELETE FROM animals
+  #   WHERE id = $1"
+  #   values = [@id]
+  #   SqlRunner.run( sql, values)
+  # end
 
   def get_dob()
     time = Time.new
@@ -93,6 +93,13 @@ class Animal
     sql = "SELECT * FROM animals"
     result = SqlRunner.run(  sql)
     return result.map{ |animal| Animal.new(animal)}
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM animals
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   def self.delete_all()

@@ -12,32 +12,43 @@
 
     <% for human in @humans %>
       <tr>
+
         <td>
           <a href="/humans/<%= human.id %>">
             <h2><%= human.name %></h2>
           </a>
         </td>
+
         <td>
           <p><%= human.address %></p>
         </td>
+
         <td>
           <p><%= human.email %></p>
         </td>
+
         <td>
           <p><%= human.phone %></p>
         </td>
+
         <td>
           <p><%= human.fav_colour %></p>
         </td>
+
         <td>
           <a href="/humans/<%= human.id %>/edit">edit</a>
         </td>
-        <!-- <td>
-          <a href="/humans/<%= human.id %>/delete">delete</a>
-        </td> -->
+
+        <td>
+          <form action="/humans/<%= human.id %>/delete" method="post">
+            <button type="submit" name="button">Delete Human</button>
+          </form>
+        </td>
 
       </tr>
+
       <% end %>
+
       <tr>
         <td>
           <a href="/humans/new">Add New Human</a>

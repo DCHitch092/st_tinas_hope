@@ -43,7 +43,11 @@
         <a href="/animals/<%= animal.id %>/edit">edit</a>
       </td>
       <td colspan="<%= colspan[6] %>">
-        <a href="/animals/<%= animal.id %>/delete">delete</a>
+
+        <form action="/animals/<%= animal.id %>/delete" method="post">
+          <button type="submit" name="button">Delete animal</button>
+        </form>
+
       </td>
 
     </tr>

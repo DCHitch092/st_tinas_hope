@@ -28,6 +28,12 @@ class Human
   def self.delete_all()
     sql = "DELETE FROM humans"
     SqlRunner.run(sql)
-  end 
+  end
+
+  def self.all()
+    sql = "SELECT * FROM humans"
+    result = SqlRunner.run(sql)
+    return result.map{|human| Human.new(human)}
+  end
 
 end

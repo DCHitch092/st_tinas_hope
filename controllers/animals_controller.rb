@@ -7,8 +7,14 @@ get '/animals/new' do #new
   erb(:'animals/new')
 end
 
+get '/animals/:id' do #show
+  @animal_id = params[:id]
+  @animal = Animal.find(@animal_id)
+  erb(:'animals/show')
+end
+
 post '/animals' do #create
   @new_animal = Animal.new(params)
-  @new_animal.save() 
+  @new_animal.save()
   erb(:'animals/create')
 end

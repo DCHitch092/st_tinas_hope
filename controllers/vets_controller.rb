@@ -13,6 +13,12 @@ get '/vets/:id' do #show
   erb(:'vets/show')
 end
 
+get 'vets/:id/edit' do #edit
+  @vet_id = params[:id]
+  @vet = Vet.find(@vet_id)
+  erb(:'vets/edit')
+end
+
 post '/vets' do #create
   @new_vet = Vet.new(params)
   @new_vet.save()

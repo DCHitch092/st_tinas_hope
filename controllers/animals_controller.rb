@@ -13,6 +13,12 @@ get '/animals/:id' do #show
   erb(:'animals/show')
 end
 
+get '/animals/:id/edit' do #show
+  @animal_id = params[:id]
+  @animal = Animal.find(@animal_id)
+  erb(:'animals/edit')
+end
+
 post '/animals' do #create
   @new_animal = Animal.new(params)
   @new_animal.save()

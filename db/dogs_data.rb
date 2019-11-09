@@ -5,6 +5,7 @@ require('pry')
 
 Vet.delete_all()
 Animal.delete_all()
+Human.delete_all()
 
 vet1 = Vet.new(
   { 'name' => 'Nurse Elmo',

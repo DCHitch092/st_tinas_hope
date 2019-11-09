@@ -1,45 +1,55 @@
 <div>
   <table id="animals_table">
+    <%  colspan =[6,2,2,1,1,2,2] %>
+    <%  total_colspan = 0 %>
+    <%  for each in colspan
+    total_colspan += each %>
+    <% end %>
     <tr>
-      <td colspan="2">name</td>
-      <td colspan="1">type</td>
-      <td colspan="1">age</td>
-      <td colspan="2">date of birth</td>
-      <td colspan="2">favourite colour</td>
-      <td colspan="1"></td>
-      <td colspan="1"></td>
+      <td colspan="<%= colspan[0] %>">
+        <p>Name</p></td>
+      <td colspan="<%= colspan[1] %>">
+        <p>Type</p></td>
+      <td colspan="<%= colspan[2] %>">
+        <p> Age (years)</p></td>
+      <td colspan="<%= colspan[3] %>">
+        <p> Date of birth</p></td>
+      <td colspan="<%= colspan[4] %>">
+        <p>Favourite colour</p></td>
+      <td colspan="<%= colspan[5] %>"></td>
+      <td colspan="<%= colspan[6] %>"></td>
     </tr>
     <% for animal in @animals %>
     <tr>
-      <td colspan="2">
+      <td colspan="<%= colspan[0] %>">
         <a href="/animals/<%= animal.id %>">
           <p><%= animal.name %></p>
         </a>
       </td>
-      <td colspan="1">
+      <td colspan="<%= colspan[1] %>">
         <p><%= animal.type %></p>
       </td>
-      <td colspan="1">
+      <td colspan="<%= colspan[2] %>">
         <p><% @up_to_date_age = animal.get_age() %>
           <%= @up_to_date_age %></p>
       </td>
-      <td colspan="2">
+      <td colspan="<%= colspan[3] %>">
         <p><%= animal.date_of_birth %></p>
       </td>
-      <td colspan="2">
+      <td colspan="<%= colspan[4] %>">
         <p><%= animal.fav_colour %></p>
       </td>
-      <td colspan="1">
+      <td colspan="<%= colspan[5] %>">
         <a href="/animals/<%= animal.id %>/edit">edit</a>
       </td>
-      <td colspan="1">
+      <td colspan="<%= colspan[6] %>">
         <a href="/animals/<%= animal.id %>/delete">delete</a>
       </td>
 
     </tr>
       <% end %>
     <tr>
-      <td colspan="10">
+      <td colspan="<%= total_colspan %>">
         <a href="/animals/new">
           <p>Add New Animal</p>
         </a>

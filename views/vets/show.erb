@@ -6,3 +6,7 @@
 <p><a href="/vets/<%= @vet['id'] %>/edit">Edit Vet</a></p>
 
 <a href="/vets"><< return to all vets</a>
+<form action="/vets/<%= @vet['id'] %>/delete" method="post">
+  <button type="submit" name="button">Delete Vet</button>
+
+</form>

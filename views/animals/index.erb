@@ -4,7 +4,7 @@
     <li>
       <a href="/animals/<%= animal.id %>"><h2><%= animal.name %></h2></a>
       <p><%= animal.type %></p>
-      <p><%= animal.age %>(<%= animal.date_of_birth %>)</p>
+      <p><% @up_to_date_age = animal.get_age() %><%= @up_to_date_age %>(<%= animal.date_of_birth %>)</p>
       <p><%= animal.fav_colour %></p>
       <!-- <p><a href="/animals/<%= animal.id %>/edit">Edit Animal</a></p> -->
       <hr></li>

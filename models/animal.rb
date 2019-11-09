@@ -29,7 +29,7 @@ class Animal
     if @age != nil && @date_of_birth == nil
       @date_of_birth = self.get_dob
     else
-    @age = self.get+age
+    @age = self.get_age()
     end
     self.save()
   end

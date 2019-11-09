@@ -22,14 +22,14 @@ vet2.save()
 
 animal1 = Animal.new(
   { 'name' => 'PiPiPaPa-Pu',
-    'date_of_birth' => '2013/05/15',
+    'date_of_birth' => '2013-05-15',
     'type' =>  'dog',
     'fav_colour' => 'purple',
     'age' => 6})
 
 animal2 = Animal.new(
   { 'name' => 'PaPaPiPi-Pu',
-    'date_of_birth' => '2013/05/15',
+    'date_of_birth' => '2013-05-15',
     'type' =>  'dog',
     'fav_colour' => 'blue',
     'age' => 6})

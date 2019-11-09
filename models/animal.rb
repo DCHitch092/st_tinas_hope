@@ -26,12 +26,14 @@ class Animal
   end
 
   def new_animal()
-    if @age != nil && @date_of_birth == nil
-      @date_of_birth = self.get_dob
+    if @date_of_birth == nil
+      @date_of_birth = self.get_dob()
     else
-    @age = self.get_age()
+      @age = self.get_age()
     end
     self.save()
+    # binding.pry
+    return self
   end
 
   def update()

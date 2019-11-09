@@ -37,6 +37,6 @@ animal2 = Animal.new(
 animal1.save()
 animal2.save()
 
-binding.pry
-
-nil
+# binding.pry
+#
+# nil

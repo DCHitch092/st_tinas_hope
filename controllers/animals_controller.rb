@@ -21,6 +21,6 @@ end
 
 post '/animals' do #create
   @new_animal = Animal.new(params)
-  @new_animal.save()
+  @new_animal.new_animal()
   erb(:'animals/create')
 end

@@ -13,4 +13,16 @@ class Human
     @phone = options['phone']
     @fav_colour = options['fav_colour']
   end
+
+  def save()
+    sql = "INSERT INTO humans
+    ( name, email, address, phone, fav_colour)
+    VALUES
+    ( $1, $2, $3, $4, $5)
+    RETURNING id"
+    values = [@name, @email, @address, @phone, @fav_colour]
+    result = SqlRunner.run( sql, values)[0]
+    @id = result['id'].to_i
+  end
+
 end

@@ -12,3 +12,9 @@ post '/humans' do #create
   human.save()
   erb(:'humans/create')
 end
+
+get '/humans/:id/edit' do #edit
+  @human_id = params[:id]
+  @human = Human.find(@human_id)
+  erb(:'humans/edit')
+end

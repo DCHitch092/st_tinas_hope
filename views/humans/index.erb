@@ -1,0 +1,17 @@
+<h1>Humans</h1>
+
+<div>
+  <ul id="humans_table">
+  <% for human in @humans %>
+    <li>
+      <a href="/humans/<%= human.id %>"><h2><%= human.name %></h2></a>
+      <p><%= human.date_of_birth %></p>
+      <p><%= human.fav_colour %></p>
+      <h3>Contact Details</h3>
+        <p><%= human.address %></p>
+        <p><%= human.email %></p>
+        <p><%= human.phone %></p>
+      <hr></li>
+    <% end %>
+  </ul>
+</div>

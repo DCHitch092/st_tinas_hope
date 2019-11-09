@@ -1,6 +1,8 @@
 require_relative('../models/vet')
 require_relative('../models/animal')
 require_relative('../models/human')
+require_relative('../models/vet_assign')
+
 require('pry')
 
 Vet.delete_all()
@@ -55,6 +57,23 @@ human2 = Human.new({
 
 human1.save()
 human2.save()
+
+vet_assign1 = VetAssign.new({
+  'animal_id' => animal1.id,
+  'vet_id' => vet1.id
+  })
+vet_assign2 = VetAssign.new({
+  'animal_id' => animal2.id,
+  'vet_id' => vet2.id
+  })
+vet_assign3 = VetAssign.new({
+  'animal_id' => animal1.id,
+  'vet_id' => vet2.id
+  })
+
+  vet_assign1.save()
+  vet_assign2.save()
+  vet_assign3.save()
 
 # binding.pry
 #

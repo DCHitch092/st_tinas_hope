@@ -21,5 +21,5 @@ class VetAssign
     result = SqlRunner.run(sql, values)[0]
     @id = result['id'].to_i
   end
-  
+
 end

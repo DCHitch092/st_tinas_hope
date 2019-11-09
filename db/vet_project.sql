@@ -1,5 +1,5 @@
 DROP TABLE vets;
-DROP TABLE animals
+DROP TABLE animals;
 
 CREATE TABLE vets(
   id SERIAL4 PRIMARY KEY,

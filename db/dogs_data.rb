@@ -1,4 +1,5 @@
 require_relative('../models/vet')
+require_relative('../models/animal')
 require('pry')
 
 Vet.delete_all()

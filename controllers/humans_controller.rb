@@ -14,8 +14,10 @@ post '/humans' do #create
 end
 
 get '/humans/:id' do #show
-  @human = Human.find(params[:id])
+  human_id = params[:id]
+  @human = Human.find(human_id)
   erb(:'humans/show')
+end
 
 get '/humans/:id/edit' do #edit
   @human_id = params[:id]

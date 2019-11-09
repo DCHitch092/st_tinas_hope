@@ -4,17 +4,6 @@ require_relative('../animal')
 
 class VetTest < MiniTest::Test
 
-  def setup
-    @animal_no_age = Animal.new(
-      { 'name' => 'test_boy',
-        'date_of_birth' => '2018-11-01',
-        'type' =>  'dog',
-        'fav_colour' => 'purple',
-        'age' => ''})
-
-
-  end
-
   def test_get_dob()
     animal_no_dob = Animal.new(
       { 'name' => 'test_girl',
@@ -27,10 +16,17 @@ class VetTest < MiniTest::Test
     assert_equal('2018-11-09', result)
   end
 
-  # def test_get_age()
-  #   result = animal_no_age.get_age()
-  #   assert_equal('2018-11-09', result)
-  # end
+  def test_get_age()
+    animal_no_age = Animal.new(
+      { 'name' => 'test_boy',
+        'date_of_birth' => '2018-11-01',
+        'type' =>  'dog',
+        'fav_colour' => 'purple',
+        'age' => ''})
+
+    result = animal_no_age.get_age()
+    assert_equal('1', result)
+  end
   #
   # def test_save__no_age()
   # end

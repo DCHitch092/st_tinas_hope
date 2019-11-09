@@ -4,6 +4,20 @@
 <p>Favourite Colour: <%= @vet['fav_colour'] %></p>
 
 <p><a href="/vets/<%= @vet['id'] %>/edit">Edit Vet</a></p>
+<hr>
+<h2>Assigned Animals</h2>
+<table>
+  <% for animal in @animals %>
+  <tr>
+    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+    <td><%= animal.age %>Age</td>
+    <td>Owner</td>
+    <td>Notes</td>
+    <td>Medicines</td>
+    <td>Unassign</td>
+  </tr>
+  <% end %>
+</table>
 
 <a href="/vets"><< return to all vets</a>
 <form class="vet-delete" action="/vets/<%= @vet['id'] %>/delete" method="post">

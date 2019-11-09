@@ -31,8 +31,8 @@ post '/animals/:id' do #update
 end
 
 post '/animals/:id/delete' do #delete
-  @animal_id = params[:id]
-  @animal = Animal.find(@animal_id)
-  @animal.delete()
+  animal_id = params[:id]
+  animal = Animal.find(animal_id)
+  animal.delete()
   redirect to '/animals'
 end

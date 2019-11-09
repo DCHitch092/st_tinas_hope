@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require('pry')
 
 # required controller files
 require_relative('./controllers/vets_controller')

@@ -1,5 +1,6 @@
 DROP TABLE vets;
 DROP TABLE animals;
+DROP TABLE humans;
 
 CREATE TABLE vets(
   id SERIAL4 PRIMARY KEY,
@@ -16,4 +17,13 @@ CREATE TABLE animals(
   type VARCHAR(255),
   fav_colour VARCHAR(255),
   age INT4
+);
+
+CREATE TABLE humans(
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  email VARCHAR(255),
+  address TEXT,
+  phone VARCHAR(255),
+  fav_colour VARCHAR(255)
 );

@@ -31,8 +31,9 @@ post '/vets/:id' do #update
 end
 
 post '/vets/:id/delete' do #delete
-  @vet_id = params[:id]
-  @vet = Vet.find(@vet_id)
-  @vet.delete()
+  vet_id = params[:id]
+  vet = Vet.find(vet_id)
+  # binding.pry
+  vet.delete()
   redirect to '/vets'
 end

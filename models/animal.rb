@@ -57,6 +57,19 @@ class Animal
     return dob.strftime("%Y-%m-%d")
   end
 
+  def get_age()
+    time = Time.new.to_i
+    # current_date = "#{time.year}-#{time.month}-#{time.day}"
+    # time.strftime("%Y-%m-%d")
+    if self.date_of_birth
+      date_of_birth = Time.new(self.date_of_birth)
+      difference = time - date_of_birth.to_i
+      years_in_seconds = 365 * 24 * 60 * 60
+      age = difference/years_in_seconds
+    end
+    return age
+  end
+
   def self.find(id)
     sql = "SELECT * FROM animals
     WHERE id = $1"

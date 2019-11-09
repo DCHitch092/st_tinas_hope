@@ -19,13 +19,13 @@ class VetTest < MiniTest::Test
   def test_get_age()
     animal_no_age = Animal.new(
       { 'name' => 'test_boy',
-        'date_of_birth' => '2018-11-01',
+        'date_of_birth' => '2017-01-01',
         'type' =>  'dog',
         'fav_colour' => 'purple',
         'age' => ''})
 
     result = animal_no_age.get_age()
-    assert_equal('1', result)
+    assert_equal(2, result)
   end
   #
   # def test_save__no_age()

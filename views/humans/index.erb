@@ -1,18 +1,51 @@
 <h1>Humans</h1>
-<nav>
-  <a href="/humans/new">Add New Human</a>
-</nav>
-<div>
-  <ul id="humans_table">
-  <% for human in @humans %>
-    <li>
-      <a href="/humans/<%= human.id %>"><h2><%= human.name %></h2></a>
-      <p><%= human.fav_colour %></p>
-      <h3>Contact Details</h3>
-        <p><%= human.address %></p>
-        <p><%= human.email %></p>
-        <p><%= human.phone %></p>
-      <hr></li>
-    <% end %>
-  </ul>
+
+<div class="humans table">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td colspan="3">Contact Details</td>
+      <td>Favourite Colour</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+
+    <% for human in @humans %>
+      <tr>
+        <td>
+          <a href="/humans/<%= human.id %>">
+            <h2><%= human.name %></h2>
+          </a>
+        </td>
+        <td>
+          <p><%= human.address %></p>
+        </td>
+        <td>
+          <p><%= human.email %></p>
+        </td>
+        <td>
+          <p><%= human.phone %></p>
+        </td>
+        <td>
+          <p><%= human.fav_colour %></p>
+        </td>
+        <td>
+          <a href="/humans/<%= human.id %>/edit">edit</a>
+        </td>
+        <!-- <td>
+          <a href="/humans/<%= human.id %>/delete">delete</a>
+        </td> -->
+
+      </tr>
+      <% end %>
+      <tr>
+        <td>
+          <a href="/humans/new">Add New Human</a>
+        </td>
+      </tr>
+  </table>
+
+
+
+
 </div>

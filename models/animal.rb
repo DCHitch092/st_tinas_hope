@@ -45,6 +45,18 @@ class Animal
     SqlRunner.run( sql, values)
   end
 
+  def get_dob()
+    time = Time.new
+    current_date = "#{time.year}-#{time.month}-#{time.day}"
+    # time.strftime("%Y-%m-%d")
+    if self.age
+      years = self.age
+      years_in_seconds = years * 365 * 24 * 60 * 60
+      dob = time - years_in_seconds
+    end
+    return dob.strftime("%Y-%m-%d")
+  end
+
   def self.find(id)
     sql = "SELECT * FROM animals
     WHERE id = $1"

@@ -5,22 +5,24 @@ require_relative('../animal')
 class VetTest < MiniTest::Test
 
   def setup
-    animal_no_age = Animal.new(
+    @animal_no_age = Animal.new(
       { 'name' => 'test_boy',
         'date_of_birth' => '2018-11-01',
         'type' =>  'dog',
         'fav_colour' => 'purple',
         'age' => ''})
 
+
+  end
+
+  def test_get_dob()
     animal_no_dob = Animal.new(
       { 'name' => 'test_girl',
         'date_of_birth' => '',
         'type' =>  'dog',
         'fav_colour' => 'purple',
-        'age' => 6})
-  end
+        'age' => 1})
 
-  def test_get_dob()
     result = animal_no_dob.get_dob()
     assert_equal('2018-11-09', result)
   end

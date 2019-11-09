@@ -29,3 +29,10 @@ post '/animals/:id' do #update
   Animal.new(params).update()
   erb(:'animals/update')
 end
+
+post '/animals/:id/delete' do #delete
+  @animal_id = params[:id]
+  @animal = Animal.find(@animal_id)
+  @animal.delete()
+  redirect to '/animals'
+end

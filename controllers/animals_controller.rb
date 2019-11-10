@@ -16,6 +16,8 @@ end
 get '/animals/:id/edit' do #edit
   @animal_id = params[:id]
   @animal = Animal.find(@animal_id)
+  @humans = Human.all()
+  @vets = Vet.all()
   erb(:'animals/edit')
 end
 

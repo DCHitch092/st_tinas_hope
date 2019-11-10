@@ -55,13 +55,13 @@ class Animal
   #   values = [@id]
   #   SqlRunner.run( sql, values)
   # end
-  def get_human_id()
+  def get_human()
     sql = "SELECT * FROM humans
     INNER JOIN human_assign
     ON human_assign.human_id = human.id
     WHERE human_assign.animal_id = $1"
     values = [@id]
-    result = SqlRunner.run(  sql, values)[0]['id']
+    result = SqlRunner.run(  sql, values)[0]
   end
 
   def get_vet()

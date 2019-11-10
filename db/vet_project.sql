@@ -34,10 +34,10 @@ CREATE TABLE vet_assign(
   id        SERIAL4 PRIMARY KEY,
   vet_id    INT4 REFERENCES vets(id),
   animal_id INT4 REFERENCES animals(id)
-)
+);
 
 CREATE TABLE human_assign(
   id        SERIAL4 PRIMARY KEY,
   human_id    INT4 REFERENCES humans(id),
   animal_id INT4 REFERENCES animals(id)
-)
+);

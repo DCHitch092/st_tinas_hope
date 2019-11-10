@@ -16,6 +16,7 @@ end
 get '/humans/:id' do #show
   human_id = params[:id]
   @human = Human.find(human_id)
+  @animals = Human.assigned_to_human(human_id)
   erb(:'humans/show')
 end
 

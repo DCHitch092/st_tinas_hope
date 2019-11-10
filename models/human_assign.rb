@@ -22,4 +22,9 @@ class HumanAssign
     @id = result['id'].to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM human_assign"
+    SqlRunner.run(sql)
+  end
+
 end

@@ -7,9 +7,20 @@
 <p>Phone: <%= @human['phone'] %></p>
 <p>E-mail: <%= @human['email'] %></p>
 
-<h3> Associated animals: </h3>
-This is where the associated animals will be listed.
-<!-- <p><a href="/humans/<%= @human['id'] %>/edit">Add Associated Pet</a></p> -->
+<h2>Assigned Animals</h2>
+<table>
+  <% for animal in @animals %>
+  <tr>
+    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+    <td><%= animal.age %>Age</td>
+    <td>Owner</td>
+    <td>Notes</td>
+    <td>Medicines</td>
+    <td>Unassign</td>
+  </tr>
+  <% end %>
+</table>
+
 
 <p><a href="/humans/<%= @human['id'] %>/edit">Edit human</a></p>
 <p><a href="/humans"><< back to all humans</a>

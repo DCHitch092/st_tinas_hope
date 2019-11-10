@@ -55,6 +55,17 @@ class Animal
   #   values = [@id]
   #   SqlRunner.run( sql, values)
   # end
+  def get_human_id()
+    sql = "SELECT * FROM humans
+    INNER JOIN human_assign
+    ON human_assign.human_id = human.id
+    WHERE human_assign.animal_id = $1"
+    values = [@id]
+    result = SqlRunner.run(  sql, values)[0]['id']
+  end
+
+  def get_vet()
+  end
 
   def get_dob()
     time = Time.new

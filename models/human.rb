@@ -37,6 +37,16 @@ class Human
     SqlRunner.run(  sql, values)
   end
 
+  def self.assigned_to_human(id)
+    sql = "SELECT * FROM animals
+    INNER JOIN human_assign
+    ON vet_assign.animal_id = animals.id
+    WHERE vet_assign.human_id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return result.map{ |animal| Animal.new(animal)}
+  end
+
   def self.delete(id)
     sql = "DELETE FROM humans
     WHERE id = $1"

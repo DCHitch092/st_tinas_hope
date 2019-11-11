@@ -5,6 +5,7 @@ end
 
 get '/animals/new' do #new
   @humans = Human.all()
+  @vets = Vet.all()
   erb(:'animals/new')
 end
 
@@ -23,7 +24,7 @@ get '/animals/:id/edit' do #edit
 end
 
 post '/animals' do #create
-  @new_animal = Animal.new(params)
+  @new_animal=Animal.new(params)
   @new_animal.new_animal()
   erb(:'animals/create')
 end

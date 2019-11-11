@@ -17,6 +17,17 @@
       <% end %>
     </select>
 
+    <select id="vet-id" name="vet_id" selected="
+    <% unassigned = Vet.find_unassigned() %>
+    <%= unassigned.id %>">
+      <% for vet in @vets %>
+        <% if vet.id == unassigned.id %>
+          <option value="<%= vet.id %>" selected ><%= vet.name %></option>
+        <% else %>
+          <option value="<%= vet.id %>"><%= vet.name %></option>
+        <% end %>
+      <% end %>
+    </select>
     <button type="submit" name="animals">Add Animal</button>
 </form>
 

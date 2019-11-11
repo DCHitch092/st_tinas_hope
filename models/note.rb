@@ -24,6 +24,35 @@ class Note
     @id = result['id']
   end
 
+  def get_author()
+    sql = "SELECT vets.vet_name FROM vets
+    INNER JOIN notes
+    ON notes.vet_id = vets.id
+    WHERE notes.id = $1"
+    values = [@id]
+    result = SqlRunner.run(  sql, values)[0]
+    return result
+  end
+
+  def self.find_by_animal(id)
+    sql = "SELECT * FROM notes
+    WHERE animal_id = $1
+    ORDER BY notes.timestamp DESC"
+    values = [id]
+    result = SqlRunner.run( sql, values)
+    return result.map{|note| Note.new(note)}
+  end
+
+  def get_patient()
+    sql = "SELECT animals.animal_name FROM animals
+    INNER JOIN notes
+    ON notes.animal_id = animals.id
+    WHERE notes.id = $1"
+    values = [@id]
+    result = SqlRunner.run(  sql, values)[0]
+    return result
+  end
+
   def self.all()
     sql = "SELECT * FROM notes"
     result = SqlRunner.run(sql)

@@ -14,7 +14,7 @@
     <% unassigned = Vet.find_unassigned() %>
     <%= unassigned.id %>">
       <% for vet in @vets %>
-        <% if vet.id == unassigned.id %>
+        <% if vet.id.to_i == unassigned.id.to_i %>
           <option value="<%= vet.id %>" selected ><%= vet.vet_name %></option>
         <% else %>
           <option value="<%= vet.id %>"><%= vet.vet_name %></option>

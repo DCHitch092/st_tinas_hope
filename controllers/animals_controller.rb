@@ -12,6 +12,8 @@ end
 get '/animals/:id' do #show
   animal_id = params[:id]
   @animal = Animal.find(animal_id)
+  @notes = Note.find_by_animal(animal_id)
+  
   erb(:'animals/show')
 end
 
@@ -20,17 +22,17 @@ get '/animals/:id/edit' do #edit
   @animal = Animal.find(animal_id)
   @humans = Human.all()
   @vets = Vet.all()
+  @notes = Note.find_by_animal(animal_id)
   erb(:'animals/edit')
 end
 
-get '/animals/:id/notes' do #show-notes
-  animal_id = params[:id]
-  @animal = Animal.find(animal_id)
-  @notes = Note.find_by_animal(animal_id)
-  # @humans = Human.all()
-  # @vets = Vet.all()
-  erb(:'animals/notes')
-end
+# get '/animals/:id/notes' do #show-notes
+#   animal_id = params[:id]
+#   @animal = Animal.find(animal_id)
+#   # @humans = Human.all()
+#   # @vets = Vet.all()
+#   erb(:'animals/notes')
+# end
 
 get '/animals/:id/assign-vet' do #edit-vet
   animal_id = params[:id]

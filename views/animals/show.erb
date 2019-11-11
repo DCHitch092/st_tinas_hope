@@ -8,6 +8,21 @@
 <p><a href="/animals/<%= @animal.id %>/assign-vet">Assign Vet</a></p>
 <p><a href="/animals/<%= @animal.id %>/assign-human">Assign Human</a></p>
 
+<hr>
+
+<h2>Notes</h2>
+<table>
+  <% for note in @notes %>
+  <tr>
+    <td><a href="/notes/<%= note.id %>"><%= note.timestamp %></a></td>
+    <td><%= note.body %></td>
+    <td><a href="<%= note.vet_id %>"><%= note.get_author()['vet_name'] %></a></td>
+  </tr>
+  <% end %>
+</table>
+
+<hr>
+
 <a href="/animals"><< back to all animals</a>
 <form action="/animals/<%= @animal.id %>/delete" method="post">
   <button type="submit" name="button">Delete animal</button>

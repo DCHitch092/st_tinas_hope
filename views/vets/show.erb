@@ -1,4 +1,4 @@
-<h1>Name: <%= @vet.name %></h1>
+<h1>Name: <%= @vet.vet_name %></h1>
 <p><%= @vet.role %></p>
 <img src="/images/<%= @vet.profile_image %>">
 <p>Favourite Colour: <%= @vet.fav_colour %></p>
@@ -9,11 +9,11 @@
 <table>
   <% for animal in @animals %>
   <tr>
-    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
-    <td><%= animal.age %></td>
-    <td><%= animal.date_of_birth %></td>
-    <td><%= animal.name %>#Owner</td>
-    <td><a href="/animals/<%= animal.id %>/notes"> View Notes</a></td>
+    <td><a href="/animals/<%= animal['id'] %>"><%= animal['animal_name'] %></a></td>
+    <td><%= animal['age'] %></td>
+    <td><%= animal['date_of_birth'] %></td>
+    <td><%= animal['human_name'] %></td>
+    <td><a href="/animals/<%= animal['id'] %>/notes"> View Notes</a></td>
     <td>#Medicines</td>
     <td>#Unassign</td>
   </tr>

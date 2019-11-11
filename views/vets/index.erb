@@ -5,8 +5,8 @@
     <% for vet in @vets %>
     <% if vet.id != @unassigned.id %>
       <li>
-        <a href="/vets/<%= vet.id %>"><img src="/images/<%= vet.profile_image %>" alt="image of <%= vet.name %>"></a>
-        <a href="/vets/<%= vet.id %>"><h2><%= vet.name %></h2></a>
+        <a href="/vets/<%= vet.id %>"><img src="/images/<%= vet.profile_image %>" alt="image of <%= vet.vet_name %>"></a>
+        <a href="/vets/<%= vet.id %>"><h2><%= vet.vet_name %></h2></a>
         <p><%= vet.role %></p>
         <p><a href="/vets/<%= vet.id %>/edit">Edit Vet</a></p>
 

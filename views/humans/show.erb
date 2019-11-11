@@ -1,5 +1,5 @@
 
-<h1>Name: <%= @human.name %></h1>
+<h1>Name: <%= @human.human_name %></h1>
 <p>Favourite Colour: <%= @human.fav_colour %></p>
 
 <h3>Contact:</h3>
@@ -11,7 +11,7 @@
 <table>
   <% for animal in @animals %>
   <tr>
-    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+    <td><a href="/animals/<%= animal.id %>"><%= animal.animal_name %></a></td>
     <td><%= animal.age %>Age</td>
     <td>Owner</td>
     <td>Notes</td>
@@ -20,9 +20,6 @@
     <td>Reassign</td>
   </tr>
   <% end %>
-  <!-- <tr>
-    <td colspan ="6"><a href="/human-assign/<%= @human.id %>/new-animal">Add New Animal to Human</a></td>
-  </tr> -->
 </table>
 
 

@@ -11,13 +11,11 @@
     </tr>
 
     <%for human in @humans %>
-      <% if human.name != 'Stray' %>
-
       <tr>
 
         <td>
           <a href="/humans/<%= human.id %>">
-            <h2><%= human.name %></h2>
+            <h2><%= human.human_name %></h2>
           </a>
         </td>
 
@@ -48,8 +46,6 @@
         </td>
 
       </tr>
-
-      <% end %>
       <% end %>
 
       <tr>

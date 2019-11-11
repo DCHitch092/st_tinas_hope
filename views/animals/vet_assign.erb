@@ -2,21 +2,12 @@
 
     <table>
       <tr>
-        <td>Name</td>
-        <td></td>
+        <td>Name:<%= @animal.animal_name %></td></tr>
+        <tr><td>Type: <%= @animal.type %></td></tr>
+        <tr><td>Date Of Birth:<%= @animal.date_of_birth %></td></tr>
+        <tr><td>Age: <%= @animal.age %></td></tr>
+        <tr><td>Favourite Color:<%= @animal.fav_colour %></td>
       </tr>
-      <form class="animals" action="/animals/<%= @animal.id %>" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="animal-name" name="animal_name" value="<%= @animal.animal_name %>">
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type" value="<%= @animal.type %>">
-        <label for="date-of-birth">D/O/B:</label>
-        <input type="date" id="date-of-birth" name="date_of_birth" value="<%= @animal.date_of_birth %>">
-        <label for="fav-colour">Favourite Colour:</label>
-        <input type="color" id="fav-colour" name="fav_colour" value="<%= @animal.fav_colour %>">
-        <label for="age">Age:</label>
-        <input type="text" id="age" name="age" value="<%= @animal.age %>">
-
     </table>
   <form class="animals" action="/animals/vet_assign" method="post">
     <select id="vet-id" name="vet_id" selected="
@@ -30,7 +21,7 @@
         <% end %>
       <% end %>
     </select>
-    <button type="submit" name="animals">Add Animal</button>
+    <button type="submit" name="animals">Assign Vet</button>
 </form>
 
 </div>

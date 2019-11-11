@@ -109,10 +109,12 @@ class Animal
   def self.waiting_room()
     vet = Vet.find_unassigned()
     sql = "SELECT * From animals
+    INNER JOIN humans
+    on animals.human_id = humans.id
     WHERE vet_id = $1"
     values = [vet.id]
     result = SqlRunner.run(  sql, values)
-    return result.map{|animal| Animal.new(animal)}
+    # return result.map{|animal| Animal.new(animal)}
   end
 
   def self.find(id)

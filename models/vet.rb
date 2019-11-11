@@ -48,10 +48,12 @@ class Vet
 
   def get_animals()
     sql = "SELECT * FROM animals
-    WHERE vet_id = $1"
+    INNER JOIN humans
+    ON animals.human_id = humans.id
+    WHERE animals.vet_id = $1"
     values = [@id]
     result = SqlRunner.run(  sql, values)
-    return result.map{|animal| Animal.new(animal)}
+    # return result.map{|animal| Animal.new(animal)}
   end
 
   def self.find_unassigned()

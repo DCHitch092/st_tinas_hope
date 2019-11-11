@@ -5,13 +5,13 @@
 <table>
 <tr>
   <td> Animal Name</td>
-  <td>>Human_Name</td>
-  <td>>Assign vet</td>
+  <td> Human_Name</td>
+  <td> </td>
 </tr>
   <% for animal in @animals %>
 <tr>
-  <td> <a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
-  <td> <a href="/humans/<%= animal.human_id %>">#Human_Name</a></td>
+  <td> <a href="/animals/<%= animal['id'] %>"><%= animal['animal_name'] %></a></td>
+  <td> <a href="/humans/<%= animal['human_id']%>"> <%= animal['human_name'] %></a></td>
   <td> #>Assign vet</td>
 </tr>
 <% end %>

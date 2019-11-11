@@ -36,14 +36,22 @@ class Vet
     SqlRunner.run(  sql, values )
   end
 
-  def self.assigned_to_vet(id)
-    sql = "SELECT * FROM animals
-    INNER JOIN vet_assign
-    ON vet_assign.animal_id = animals.id
-    WHERE vet_assign.vet_id = $1"
-    values = [id]
-    result = SqlRunner.run(sql, values)
-    return result.map{ |animal| Animal.new(animal)}
+  # def self.assigned_to_vet(id)
+  #   sql = "SELECT * FROM animals
+  #   INNER JOIN vet_assign
+  #   ON vet_assign.animal_id = animals.id
+  #   WHERE vet_assign.vet_id = $1"
+  #   values = [id]
+  #   result = SqlRunner.run(sql, values)
+  #   return result.map{ |animal| Animal.new(animal)}
+  # end
+
+  def self.find_unassigned()
+    sql = "SELECT * FROM vets
+    WHERE name = $"
+    values = ["Unassigned"]
+    vet = SqlRunner.run(  sql, values)[0]
+    return result = Vet.new(vet)
   end
 
   def self.delete(id)
@@ -68,8 +76,8 @@ class Vet
     sql = "SELECT * FROM vets
     WHERE id = $1 "
     values = [id]
-    result = SqlRunner.run( sql, values )[0]
-    return result
+    vet = SqlRunner.run( sql, values)[0]
+    return result = Human.new(vet)
   end
 
 end

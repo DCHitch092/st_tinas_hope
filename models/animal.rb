@@ -29,6 +29,7 @@ class Animal
   end
 
   def new_animal()
+    # Vet.find()@vet_id = 1
     if @date_of_birth == ''
       @date_of_birth = self.get_dob()
     else

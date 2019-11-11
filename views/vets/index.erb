@@ -3,6 +3,7 @@
   <ul id="vets_table">
 
     <% for vet in @vets %>
+    <% if vet.name != "Unassigned" %>
       <li>
         <a href="/vets/<%= vet.id %>"><img src="/images/<%= vet.profile_image %>" alt="image of <%= vet.name %>"></a>
         <a href="/vets/<%= vet.id %>"><h2><%= vet.name %></h2></a>
@@ -12,7 +13,7 @@
       <form action="/vets/<%= vet.id %>/delete" method="post">
         <button type="submit" name="button">Delete vet</button>
       </form>
-
+      <% end %>
       <hr></li>
     <% end %>
 

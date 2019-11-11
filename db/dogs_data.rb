@@ -6,10 +6,10 @@ require_relative('../models/vet_assign')
 
 require('pry')
 
-VetAssign.delete_all()
+# VetAssign.delete_all()
 # HumanAssign.delete_all()
-Vet.delete_all()
 Animal.delete_all()
+Vet.delete_all()
 Human.delete_all()
 
 vet1 = Vet.new(
@@ -24,8 +24,15 @@ vet2 = Vet.new(
     'fav_colour' => 'orange',
     'profile_image' => 'nurse-chumchi.png'})
 
+unassigned = Vet.new(
+  { 'name' => 'Unassigned',
+    'role' => 'n/a',
+    'fav_colour' => 'n/a',
+    'profile_image' => 'unassigned.png'})
+
 vet1.save()
 vet2.save()
+unassigned.save()
 
 human1 = Human.new({
   'name' => 'Hitch',
@@ -58,7 +65,7 @@ animal1 = Animal.new(
     'type' =>  'dog',
     'fav_colour' => 'purple',
     'age' => 6,
-    'human_id' => human1.id
+    'human_id' => human1.id,
     'vet_id' => vet1.id})
 
 animal2 = Animal.new(
@@ -67,7 +74,7 @@ animal2 = Animal.new(
     'type' =>  'dog',
     'fav_colour' => 'blue',
     'age' => 6,
-    'human_id' => human1.id
+    'human_id' => human1.id,
     'vet_id' => vet2.id})
 
 animal3 = Animal.new(
@@ -76,7 +83,7 @@ animal3 = Animal.new(
     'type' =>  'dog',
     'fav_colour' => 'blue',
     'age' => 2,
-    'human_id' => human2.id
+    'human_id' => human2.id,
     'vet_id' => vet2.id})
 
 animal1.new_animal()

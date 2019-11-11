@@ -32,6 +32,13 @@ get '/animals/:id/notes' do #show-notes
   erb(:'animals/notes')
 end
 
+get '/animals/:id/assign' do #edit-vet
+  animal_id = params[:id]
+  @animal = Animal.find(animal_id)
+  @vets = Vet.all()
+  erb(:'animals/vet_assign')
+end
+
 post '/animals' do #create
   @new_animal=Animal.new(params)
   @new_animal.new_animal()

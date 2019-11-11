@@ -64,16 +64,6 @@ class Animal
     return result
   end
 
-  # def delete()
-  #   sql = "DELETE FROM animals
-  #   WHERE id = $1"
-  #   values = [@id]
-  #   SqlRunner.run( sql, values)
-  # end
-
-  # def get_vet()
-  # end
-
   def get_dob()
     time = Time.new
     current_date = "#{time.year}-#{time.month}-#{time.day}"
@@ -112,7 +102,6 @@ class Animal
     sql = "SELECT * From animals
     WHERE vet_id = $1"
     values = [vet.id]
-
     result = SqlRunner.run(  sql, values)
     return result.map{|animal| Animal.new(animal)}
   end

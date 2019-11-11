@@ -10,7 +10,9 @@
       <td>Delete</td>
     </tr>
 
-    <% for human in @humans %>
+    <%for human in @humans %>
+      <% if human.name != 'Stray' %>
+
       <tr>
 
         <td>
@@ -47,6 +49,7 @@
 
       </tr>
 
+      <% end %>
       <% end %>
 
       <tr>

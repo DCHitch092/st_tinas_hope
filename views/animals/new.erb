@@ -11,6 +11,12 @@
     <label for="age">Age:</label>
     <input type="text" id="age" name="age" value="">
 
+    <select id="human-id" name="human_id">
+      <% for human in @humans %>
+      <option value="<%= human.id %>"><%= human.name %></option>
+      <% end %>
+    </select>
+
     <button type="submit" name="animals">Add Animal</button>
 </form>
 

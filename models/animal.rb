@@ -29,7 +29,7 @@ class Animal
   end
 
   def new_animal()
-    if @date_of_birth == nil
+    if @date_of_birth == ''
       @date_of_birth = self.get_dob()
     else
       @age = self.get_age()

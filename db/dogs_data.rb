@@ -41,8 +41,16 @@ human2 = Human.new({
   'phone' => '+44772122222',
   'fav_colour' => 'Aqua Marine'})
 
+stray = Human.new({
+  'name' => 'Stray',
+  'email' => 'no owner',
+  'address' => 'no owner',
+  'phone' => 'no owner',
+  'fav_colour' => ''})
+
 human1.save()
 human2.save()
+stray.save()
 
 animal1 = Animal.new(
   { 'name' => 'PiPiPaPa-Pu',

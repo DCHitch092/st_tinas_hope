@@ -47,6 +47,14 @@ class Human
   #   return result.map{ |animal| Animal.new(animal)}
   # end
 
+  def assigned_animals()
+    sql = "SELECT * FROM animals
+    WHERE animals.human_id = $"
+    values = [@id]
+    result = SqlRunner.run(  sql, values)
+    return animals.map { |results| Animal.new(result)}
+  end
+
   def self.delete(id)
     sql = "DELETE FROM humans
     WHERE id = $1"

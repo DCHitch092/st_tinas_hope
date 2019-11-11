@@ -24,8 +24,14 @@ class Note
     @id = result['id']
   end
 
+  def self.all()
+    sql = "SELECT * FROM notes"
+    result = SqlRunner.run(sql)
+    return result.map {|note| Note.new(note)}
+  end
+
   def self.delete_all()
     sql = "DELETE FROM notes"
     SqlRunner.run(sql)
-  end 
+  end
 end

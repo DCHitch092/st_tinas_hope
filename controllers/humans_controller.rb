@@ -21,8 +21,8 @@ get '/humans/:id' do #show
 end
 
 get '/humans/:id/edit' do #edit
-  @human_id = params[:id]
-  @human = Human.find(@human_id)
+  human_id = params[:id]
+  @human = Human.find(human_id)
   erb(:'humans/edit')
 end
 

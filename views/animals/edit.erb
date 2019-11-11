@@ -16,9 +16,13 @@
 
   <hr>
     <form class="assign-human" action="/human-assign/<%= @animal['id'] %>/assign-human" method="post">
-      <select id="human-id" name="human_id">
+      <select id="human-id" name="human_id" selected="<%= @animal['human_id'] %>">
         <% for human in @humans %>
-        <option value="<%= human.id %>"><%= human.name %></option>
+          <% if human.id == @animal['human_id'].to_i %>
+            <option value="<%= human.id %>" selected><%= human.name %></option>
+          <% else %>
+            <option value="<%= human.id %>"> <%= human.name %></option>
+          <% end %>
         <% end %>
       </select>
 

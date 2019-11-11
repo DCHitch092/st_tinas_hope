@@ -4,6 +4,7 @@ get '/animals' do #index
 end
 
 get '/animals/new' do #new
+  @humans = Human.all()
   erb(:'animals/new')
 end
 
@@ -14,8 +15,8 @@ get '/animals/:id' do #show
 end
 
 get '/animals/:id/edit' do #edit
-  @animal_id = params[:id]
-  @animal = Animal.find(@animal_id)
+  animal_id = params[:id]
+  @animal = Animal.find(animal_id)
   @humans = Human.all()
   @vets = Vet.all()
   erb(:'animals/edit')

@@ -1,10 +1,15 @@
 <h1>Which animal would you like to see notes for?</h1>
 
-<form id="animal-id" name action="notes/view" method="post">
+<!-- <form id="animal-id" name action="notes/view" method="post">
   <select id="animal_id" name="animal-id">
   <% for animal in @animals %>
   <option value="<%= animal.id %>"><%= animal.name %></option>
   <% end %>
   </select>
   <button type="submit" name="button">Choose Animal</button>
-</form>
+</form> -->
+<ul>
+
+<% for animal in @animals %>
+  <li><a href="/notes/<%= animal.id %>"><%= animal.name %></a></li>
+<% end %>

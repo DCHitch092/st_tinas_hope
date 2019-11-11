@@ -3,7 +3,7 @@
   <ul id="vets_table">
 
     <% for vet in @vets %>
-    <% if vet.name != "Unassigned" %>
+    <% if vet.id != @unassigned.id %>
       <li>
         <a href="/vets/<%= vet.id %>"><img src="/images/<%= vet.profile_image %>" alt="image of <%= vet.name %>"></a>
         <a href="/vets/<%= vet.id %>"><h2><%= vet.name %></h2></a>

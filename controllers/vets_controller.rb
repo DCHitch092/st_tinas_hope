@@ -1,5 +1,6 @@
 get '/vets' do #index
   @vets = Vet.all
+  @unassigned = Vet.find_unassigned()
   erb(:'vets/index')
 end
 

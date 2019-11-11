@@ -48,7 +48,7 @@ class Vet
 
   def self.find_unassigned()
     sql = "SELECT * FROM vets
-    WHERE name = $"
+    WHERE name = $1"
     values = ["Unassigned"]
     vet = SqlRunner.run(  sql, values)[0]
     return result = Vet.new(vet)

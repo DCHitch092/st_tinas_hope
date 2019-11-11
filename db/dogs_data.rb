@@ -9,9 +9,11 @@ require('pry')
 
 # VetAssign.delete_all()
 # HumanAssign.delete_all()
+Note.delete_all()
 Animal.delete_all()
 Vet.delete_all()
 Human.delete_all()
+
 
 vet1 = Vet.new(
   { 'name' => 'Nurse Elmo',
@@ -119,6 +121,7 @@ note3 = Note.new(
 
 note1.save
 note2.save
+note3.save
 
 # vet_assign1 = VetAssign.new({
 #   'animal_id' => animal1.id,

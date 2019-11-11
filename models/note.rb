@@ -24,4 +24,8 @@ class Note
     @id = result['id']
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM notes"
+    SqlRunner.run(sql)
+  end 
 end

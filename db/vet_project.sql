@@ -1,9 +1,9 @@
 -- DROP TABLE vet_assign;
 -- DROP TABLE human_assign;
+DROP TABLE notes;
 DROP TABLE animals;
 DROP TABLE vets;
 DROP TABLE humans;
-DROP TABLE notes;
 
 CREATE TABLE vets(
   id            SERIAL4 PRIMARY KEY,
@@ -38,7 +38,7 @@ CREATE TABLE notes(
   animal_id INT4 REFERENCES animals(id),
   vet_id    INT4,
   body      TEXT,
-  date      VARCHAR(255)
+  timestamp VARCHAR(255)
 );
 
 -- CREATE TABLE vet_assign(

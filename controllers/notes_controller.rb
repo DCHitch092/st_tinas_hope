@@ -8,3 +8,8 @@ get '/notes/:id' do #show
   @vet_name = @note.get_author()
   erb(:'notes/show')
 end
+
+get '/notes/new' do #show
+  @animals = Animal.all()
+  erb(:'notes/new')
+end

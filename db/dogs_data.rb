@@ -1,7 +1,8 @@
 require_relative('../models/vet')
 require_relative('../models/animal')
 require_relative('../models/human')
-require_relative('../models/vet_assign')
+require_relative('../models/note')
+# require_relative('../models/vet_assign')
 # require_relative('../models/human_assign')
 
 require('pry')
@@ -89,6 +90,35 @@ animal3 = Animal.new(
 animal1.new_animal()
 animal2.new_animal()
 animal3.new_animal()
+
+note1 = Note.new(
+  {
+    'animal_id' => animal1.id,
+    'vet_id' => vet1.id,
+    'body' => "looks unwell, maybe needs strawberries",
+    'timestamp' => Time.now,
+  }
+)
+
+note2 = Note.new(
+  {
+    'animal_id' => animal2.id,
+    'vet_id' => vet2.id,
+    'body' => "looks unwell, maybe needs strawberries",
+    'timestamp' => Time.now-2000,
+  }
+)
+note3 = Note.new(
+  {
+    'animal_id' => animal1.id,
+    'vet_id' => vet2.id,
+    'body' => "looks unwell, maybe needs strawberries",
+    'timestamp' => Time.now-20000,
+  }
+)
+
+note1.save
+note2.save
 
 # vet_assign1 = VetAssign.new({
 #   'animal_id' => animal1.id,

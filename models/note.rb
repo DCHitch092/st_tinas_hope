@@ -1,7 +1,7 @@
 require('pg')
 require_relative('../db/sql_runner')
 
-class Notes
+class Note
 
   attr_reader :id, :animal_id, :vet_id, :body, :timestamp
 
@@ -17,11 +17,11 @@ class Notes
     sql = "INSERT INTO notes
     ( animal_id, vet_id, body, timestamp)
     VALUES
-    ( $1, $2, $3, $4, $5)
+    ( $1, $2, $3, $4)
     RETURNING id"
-    values = [@animal_id, @vet_id, @body, @timestamp, @id]
+    values = [@animal_id, @vet_id, @body, @timestamp]
     result = SqlRunner.run(  sql, values)[0]
     @id = result['id']
   end
-  
+
 end

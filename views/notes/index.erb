@@ -1,15 +1,22 @@
-<h1>Which animal would you like to see notes for?</h1>
+<h1>Notes Page</h1>
 
-<!-- <form id="animal-id" name action="notes/view" method="post">
-  <select id="animal_id" name="animal-id">
-  <% for animal in @animals %>
-  <option value="<%= animal.id %>"><%= animal.name %></option>
+
+
+<table>
+  <tr>
+    <td>Animal Name</td>
+    <td>Note</td>
+    <td>Author</td>
+    <td>Timestamp</td>
+  </tr>
+  <% for note in @notes %>
+  <tr>
+    <td><%= note.id %></td>
+    <td><%= note.body %></td>
+    <td><%= note.vet_id %></td>
+  </tr>
   <% end %>
-  </select>
-  <button type="submit" name="button">Choose Animal</button>
-</form> -->
-<ul>
-
-<% for animal in @animals %>
-  <li><a href="/notes/<%= animal.id %>"><%= animal.name %></a></li>
-<% end %>
+  <tr>
+    <td colspan = "4">#Add_New_Note link</td>
+  </tr>
+</table>

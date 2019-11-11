@@ -15,6 +15,7 @@ require_relative('./models/vet')
 # require_relative('./models/vet_assign')
 require_relative('./models/animal')
 require_relative('./models/human')
+require_relative('./models/note')
 # require_relative('./models/human_assign')
 also_reload('./models/*')
 

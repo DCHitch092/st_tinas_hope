@@ -47,6 +47,13 @@ class Human
   #   return result.map{ |animal| Animal.new(animal)}
   # end
 
+  def delete()
+    sql = "DELETE FROM humans
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values)
+  end
+
   def self.assigned_animals(id)
     sql = "SELECT * FROM animals
     WHERE animals.human_id = $1"
@@ -55,11 +62,12 @@ class Human
     return result.map { |animal| Animal.new(animal)}
   end
 
-  def delete()
-    sql = "DELETE FROM humans
-    WHERE id = $1"
-    values = [@id]
-    SqlRunner.run( sql, values)
+  def self.find_unassigned()
+    sql = "SELECT * FROM humans
+    WHERE human_name = $1"
+    values = ["Stray"]
+    human = SqlRunner.run(  sql, values)[0]
+    return result = Human.new(human)
   end
 
   def self.find(id)

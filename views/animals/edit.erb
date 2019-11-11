@@ -14,7 +14,6 @@
     <button type="submit" name="animals">Update Animal</button>
 </form>
 
-  <hr>
     <form class="assign-human" action="/human-assign/<%= @animal.id %>/assign-human" method="post">
       <select id="human-id" name="human_id" selected="<%= @animal.human_id %>">
         <% for human in @humans %>

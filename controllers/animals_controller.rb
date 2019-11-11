@@ -32,11 +32,18 @@ get '/animals/:id/notes' do #show-notes
   erb(:'animals/notes')
 end
 
-get '/animals/:id/assign' do #edit-vet
+get '/animals/:id/assign-vet' do #edit-vet
   animal_id = params[:id]
   @animal = Animal.find(animal_id)
   @vets = Vet.all()
-  erb(:'animals/vet_assign')
+  erb(:'animals/assign_vet')
+end
+
+get '/animals/:id/assign-human' do #edit-vet
+  animal_id = params[:id]
+  @animal = Animal.find(animal_id)
+  @humans = Human.all()
+  erb(:'animals/assign_human')
 end
 
 post '/animals' do #create
@@ -48,6 +55,14 @@ end
 post '/animals/:id' do #update
   Animal.new(params).update()
   erb(:'animals/update')
+end
+
+post '/animals/:id/assign-vet' do
+  vet_id = params[:vet_id]
+  animal = Animal.find(:id)
+  animal.vet_id = vet_id
+  assigned_animal = Animal.new(animal).update()
+  redirect to '/animals'
 end
 
 post '/animals/:id/delete' do #delete

@@ -1,0 +1,27 @@
+<div class="human_assign">
+
+    <table>
+      <tr>
+        <td>Name:<%= @animal.animal_name %></td></tr>
+        <tr><td>Type: <%= @animal.type %></td></tr>
+        <tr><td>Date Of Birth:<%= @animal.date_of_birth %></td></tr>
+        <tr><td>Age: <%= @animal.age %></td></tr>
+        <tr><td>Favourite Color:<%= @animal.fav_colour %></td>
+      </tr>
+    </table>
+  <form class="animals" action="/animals/human_assign" method="post">
+    <select id="human-id" name="human_id" selected="
+    <% unassigned = Human.find_unassigned() %>
+    <%= unassigned.id %>">
+      <% for human in @humans %>
+        <% if human.id == unassigned.id %>
+          <option value="<%= human.id %>" selected ><%= human.human_name %></option>
+        <% else %>
+          <option value="<%= human.id %>"><%= human.human_name %></option>
+        <% end %>
+      <% end %>
+    </select>
+    <button type="submit" name="animals">Assign Human</button>
+</form>
+
+</div>

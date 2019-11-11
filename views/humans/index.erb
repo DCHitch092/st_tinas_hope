@@ -12,7 +12,7 @@
 
     <%for human in @humans %>
       <tr>
-
+        <% if human.human_name != "Stray" %>
         <td>
           <a href="/humans/<%= human.id %>">
             <h2><%= human.human_name %></h2>
@@ -46,6 +46,7 @@
         </td>
 
       </tr>
+      <% end %>
       <% end %>
 
       <tr>

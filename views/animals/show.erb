@@ -5,6 +5,8 @@
 <p>Age: <%= @animal.age %></p>
 
 <p><a href="/animals/<%= @animal.id %>/edit">Edit animal</a></p>
+<p><a href="/animals/<%= @animal.id %>/assign-vet">Assign Vet</a></p>
+<p><a href="/animals/<%= @animal.id %>/assign-human">Assign Human</a></p>
 
 <a href="/animals"><< back to all animals</a>
 <form action="/animals/<%= @animal.id %>/delete" method="post">

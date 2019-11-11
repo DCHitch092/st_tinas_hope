@@ -68,9 +68,9 @@ class Animal
     id = @vet_id
     sql = "SELECT * FROM vets
     WHERE id = $1"
-    values = id
-    result = SqlRunner.run( sql,  values)
-    return vet = Vet.new(result)
+    values = [id]
+    result = SqlRunner.run( sql,  values)[0]
+    return result
   end
 
   def get_dob()

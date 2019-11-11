@@ -47,12 +47,12 @@ class Human
   #   return result.map{ |animal| Animal.new(animal)}
   # end
 
-  def assigned_animals()
+  def self.assigned_animals(id)
     sql = "SELECT * FROM animals
-    WHERE animals.human_id = $"
-    values = [@id]
+    WHERE animals.human_id = $1"
+    values = [id]
     result = SqlRunner.run(  sql, values)
-    return animals.map { |results| Animal.new(result)}
+    return result.map { |animal| Animal.new(animal)}
   end
 
   def self.delete(id)
@@ -66,8 +66,8 @@ class Human
     sql = "SELECT * FROM humans
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run( sql, values)[0]
-    return result
+    human = SqlRunner.run( sql, values)[0]
+    return result = Human.new(human)
   end
 
   def self.delete_all()

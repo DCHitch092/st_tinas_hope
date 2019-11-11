@@ -1,11 +1,11 @@
 
-<h1>Name: <%= @human['name'] %></h1>
-<p>Favourite Colour: <%= @human['fav_colour'] %></p>
+<h1>Name: <%= @human.name %></h1>
+<p>Favourite Colour: <%= @human.fav_colour %></p>
 
 <h3>Contact:</h3>
-<p>Address:<%= @human['address'] %></p>
-<p>Phone: <%= @human['phone'] %></p>
-<p>E-mail: <%= @human['email'] %></p>
+<p>Address:<%= @human.address %></p>
+<p>Phone: <%= @human.phone %></p>
+<p>E-mail: <%= @human.email %></p>
 
 <h2>Assigned Animals</h2>
 <table>
@@ -21,15 +21,15 @@
   </tr>
   <% end %>
   <!-- <tr>
-    <td colspan ="6"><a href="/human-assign/<%= @human['id'] %>/new-animal">Add New Animal to Human</a></td>
+    <td colspan ="6"><a href="/human-assign/<%= @human.id %>/new-animal">Add New Animal to Human</a></td>
   </tr> -->
 </table>
 
 
-<p><a href="/humans/<%= @human['id'] %>/edit">Edit human</a></p>
+<p><a href="/humans/<%= @human.id %>/edit">Edit human</a></p>
 <p><a href="/humans"><< back to all humans</a>
 </p>
 
-<form action="/humans/<%= @human['id'] %>/delete" method="post">
+<form action="/humans/<%= @human.id %>/delete" method="post">
   <button type="submit" name="button">Delete human</button>
 </form>

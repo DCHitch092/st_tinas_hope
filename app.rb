@@ -20,5 +20,6 @@ require_relative('./models/note')
 also_reload('./models/*')
 
 get '/' do
+  @animals = Animal.waiting_room()
   erb(:index)
 end

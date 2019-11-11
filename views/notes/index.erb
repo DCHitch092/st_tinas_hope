@@ -1,7 +1,5 @@
 <h1>Notes Page</h1>
 
-
-
 <table>
   <tr>
     <td>Animal Name</td>
@@ -11,9 +9,10 @@
   </tr>
   <% for note in @notes %>
   <tr>
+    <td><a href="/animals/<%= note.animal_id %>">#Animal_Name</a></td>
     <td><%= note.id %></td>
     <td><%= note.body %></td>
-    <td><%= note.vet_id %></td>
+    <td><a href="/vets/<%= note.vet_id %>">#Vet_name</a></td>
   </tr>
   <% end %>
   <tr>

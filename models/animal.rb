@@ -1,10 +1,11 @@
 require('pg')
 require_relative('../db/sql_runner')
+require_relative('../models/vet')
 
 class Animal
 
   attr_accessor :human_id
-  attr_reader :id, :name, :date_of_birth, :type, :fav_colour, :age
+  attr_reader :id, :name, :date_of_birth, :type, :fav_colour, :age, :vet_id
 
 
   def initialize(options)
@@ -15,15 +16,16 @@ class Animal
     @fav_colour = options['fav_colour']
     @age = options['age'].to_i
     @human_id = options['human_id'].to_i
+    @vet_id = options['vet_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO animals
-    ( name, date_of_birth, type, fav_colour, age, human_id)
+    ( name, date_of_birth, type, fav_colour, age, human_id, vet_id)
     VALUES
-    ( $1, $2, $3, $4, $5, $6)
+    ( $1, $2, $3, $4, $5, $6, $7)
     RETURNING id"
-    values = [ @name, @date_of_birth, @type, @fav_colour, @age, @human_id]
+    values = [ @name, @date_of_birth, @type, @fav_colour, @age, @human_id, @vet_id]
     result = SqlRunner.run(  sql, values)[0]
     @id = result['id'].to_i
   end
@@ -102,6 +104,17 @@ class Animal
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+
+  def self.waiting_room()
+    vet = Vet.find_unassigned()
+    sql = "SELECT * From animals
+    WHERE vet_id = $1"
+    values = [vet.id]
+
+    result = SqlRunner.run(  sql, values)
+    return result.map{|animal| Animal.new(animal)}
   end
 
   def self.find(id)

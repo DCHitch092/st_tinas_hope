@@ -89,9 +89,19 @@ animal3 = Animal.new(
     'human_id' => human2.id,
     'vet_id' => vet2.id})
 
+animal4 = Animal.new(
+  { 'name' => 'PeeChiPu',
+    'date_of_birth' => '',
+    'type' =>  'dog',
+    'fav_colour' => 'blue',
+    'age' => 2,
+    'human_id' => human2.id,
+    'vet_id' => unassigned.id})
+
 animal1.new_animal()
 animal2.new_animal()
 animal3.new_animal()
+animal4.new_animal()
 
 note3 = Note.new(
   {

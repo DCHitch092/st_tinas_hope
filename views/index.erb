@@ -1,28 +1,20 @@
 <p>Welcome to St. Tina's Hope </p>
 
 <h2>Waiting Queue</h2>
-<p>list of unassigned animals</p><table>
+<p>list of unassigned animals</p>
+<table>
 <tr>
-  <td> >Animal Name 1 </td>
-  <td> >Human</td>
-  <td> time waiting</td>
-  <td> urgency</td>
-  <td> >assign vet</td>
+  <td> Animal Name</td>
+  <td>>Human_Name</td>
+  <td>>Assign vet</td>
 </tr>
+  <% for animal in @animals %>
 <tr>
-  <td> >Animal Name 2 </td>
-  <td> >Human</td>
-  <td> time waiting</td>
-  <td> urgency</td>
-  <td> >assign vet</td>
+  <td> <a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+  <td> <a href="/humans/<%= animal.human_id %>">#Human_Name</a></td>
+  <td> #>Assign vet</td>
 </tr>
-<tr>
-  <td> >Animal Name 2 </td>
-  <td> >Human</td>
-  <td> time waiting</td>
-  <td> urgency</td>
-  <td> >assign vet</td>
-</tr>
+<% end %>
 <tr></tr>
 <tr></tr>
 <tr></tr>

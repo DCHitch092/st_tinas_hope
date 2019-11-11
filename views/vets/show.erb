@@ -1,25 +1,26 @@
-<h1>Name: <%= @vet['name'] %></h1>
-<p><%= @vet['role'] %></p>
-<img src="/images/<%= @vet['profile_image'] %>">
-<p>Favourite Colour: <%= @vet['fav_colour'] %></p>
+<h1>Name: <%= @vet.name %></h1>
+<p><%= @vet.role %></p>
+<img src="/images/<%= @vet.profile_image %>">
+<p>Favourite Colour: <%= @vet.fav_colour %></p>
 
-<p><a href="/vets/<%= @vet['id'] %>/edit">Edit Vet</a></p>
+<p><a href="/vets/<%= @vet.id %>/edit">Edit Vet</a></p>
 <hr>
 <h2>Assigned Animals</h2>
 <table>
   <% for animal in @animals %>
   <tr>
     <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
-    <td><%= animal.age %>Age</td>
-    <td>Owner</td>
-    <td>Notes</td>
-    <td>Medicines</td>
-    <td>Unassign</td>
+    <td><%= animal.age %></td>
+    <td><%= animal.date_of_birth %></td>
+    <td><%= animal.name %>#Owner</td>
+    <td><a href="/animals/<%= animal.id %>/notes"> View Notes</a></td>
+    <td>#Medicines</td>
+    <td>#Unassign</td>
   </tr>
   <% end %>
 </table>
 
 <a href="/vets"><< return to all vets</a>
-<form class="vet-delete" action="/vets/<%= @vet['id'] %>/delete" method="post">
+<form class="vet-delete" action="/vets/<%= @vet.id %>/delete" method="post">
   <button type="submit" name="vet-delete" value="vet_delete">Delete Vet</button>
 </form>

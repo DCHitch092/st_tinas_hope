@@ -64,6 +64,15 @@ class Animal
     return result
   end
 
+  def get_vet()
+    id = @vet_id
+    sql = "SELECT * FROM vets
+    WHERE id = $1"
+    values = id
+    result = SqlRunner.run( sql,  values)
+    return vet = Vet.new(result)
+  end
+
   def get_dob()
     time = Time.new
     current_date = "#{time.year}-#{time.month}-#{time.day}"

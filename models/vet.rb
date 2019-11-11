@@ -46,6 +46,14 @@ class Vet
   #   return result.map{ |animal| Animal.new(animal)}
   # end
 
+  def get_animals()
+    sql = "SELECT * FROM animals
+    WHERE vet_id = $1"
+    values = [@id]
+    result = SqlRunner.run(  sql, values)
+    return result.map{|animal| Animal.new(animal)}
+  end
+
   def self.find_unassigned()
     sql = "SELECT * FROM vets
     WHERE name = $1"
@@ -77,7 +85,7 @@ class Vet
     WHERE id = $1 "
     values = [id]
     vet = SqlRunner.run( sql, values)[0]
-    return result = Human.new(vet)
+    return result = Vet.new(vet)
   end
 
 end

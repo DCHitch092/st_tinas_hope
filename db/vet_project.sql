@@ -18,6 +18,7 @@ CREATE TABLE animals(
   date_of_birth VARCHAR(255),
   type          VARCHAR(255),
   fav_colour    VARCHAR(255),
+  human_id      INT4 REFERENCES humans(id), 
   age           INT4
 );
 

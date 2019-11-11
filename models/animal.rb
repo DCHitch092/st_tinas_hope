@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 
 class Animal
 
-  attr_reader :id, :name, :date_of_birth, :type, :fav_colour, :age
+  attr_reader :id, :name, :date_of_birth, :type, :fav_colour, :age, :human_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -12,15 +12,16 @@ class Animal
     @type = options['type']
     @fav_colour = options['fav_colour']
     @age = options['age'].to_i
+    @human_id = options['human_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO animals
-    ( name, date_of_birth, type, fav_colour, age)
+    ( name, date_of_birth, type, fav_colour, age, human_id)
     VALUES
-    ( $1, $2, $3, $4, $5)
+    ( $1, $2, $3, $4, $5, $6)
     RETURNING id"
-    values = [ @name, @date_of_birth, @type, @fav_colour, @age]
+    values = [ @name, @date_of_birth, @type, @fav_colour, @age, @human_id]
     result = SqlRunner.run(  sql, values)[0]
     @id = result['id'].to_i
   end
@@ -42,10 +43,11 @@ class Animal
     date_of_birth = $2,
     type = $3,
     fav_colour = $4,
-    age = $5
+    age = $5,
+    human_id = $6
     WHERE
-    id = $6"
-    values = [@name, @date_of_birth, @type, @fav_colour, @age, @id]
+    id = $7"
+    values = [@name, @date_of_birth, @type, @fav_colour, @age, @human_id, @id ]
     SqlRunner.run( sql, values)
   end
 

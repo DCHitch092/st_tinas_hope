@@ -1,7 +1,7 @@
 <div class="edit_form">
   <form class="animals" action="/animals/<%= @animal.id %>" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="<%= @animal.name %>">
+    <label for="animal_name">Name:</label>
+    <input type="text" id="animal_name" name="animal_name" value="<%= @animal.animal_name %>">
     <label for="type">Type:</label>
     <input type="text" id="type" name="type" value="<%= @animal.type %>">
     <label for="date-of-birth">D/O/B:</label>
@@ -19,9 +19,9 @@
       <select id="human-id" name="human_id" selected="<%= @animal.human_id %>">
         <% for human in @humans %>
           <% if human.id == @animal.human_id.to_i %>
-            <option value="<%= human.id %>" selected><%= human.name %></option>
+            <option value="<%= human.id %>" selected><%= human.human_name %></option>
           <% else %>
-            <option value="<%= human.id %>"> <%= human.name %></option>
+            <option value="<%= human.id %>"> <%= human.human_name %></option>
           <% end %>
         <% end %>
       </select>

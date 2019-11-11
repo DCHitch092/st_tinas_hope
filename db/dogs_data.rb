@@ -16,19 +16,19 @@ Human.delete_all()
 
 
 vet1 = Vet.new(
-  { 'name' => 'Nurse Elmo',
+  { 'vet_name' => 'Nurse Elmo',
     'role' => 'Nurse',
     'fav_colour' => 'rainbow',
     'profile_image' => 'nurse-elmo.png'})
 
 vet2 = Vet.new(
-  { 'name' => 'Nurse ChumChi',
+  { 'vet_name' => 'Nurse ChumChi',
     'role' => 'Nurse',
     'fav_colour' => 'orange',
     'profile_image' => 'nurse-chumchi.png'})
 
 unassigned = Vet.new(
-  { 'name' => 'Unassigned',
+  { 'vet_name' => 'Unassigned',
     'role' => 'n/a',
     'fav_colour' => 'n/a',
     'profile_image' => 'unassigned.png'})
@@ -38,21 +38,21 @@ vet2.save()
 unassigned.save()
 
 human1 = Human.new({
-  'name' => 'Hitch',
+  'human_name' => 'Hitch',
   'email' => 'hitch@hitch.com',
   'address' => '123 Hitch Town',
   'phone' => '+4477222222',
   'fav_colour' => 'Red'})
 
 human2 = Human.new({
-  'name' => 'Maz',
+  'human_name' => 'Maz',
   'email' => 'maz@hitch.com',
   'address' => '124 Maz Village',
   'phone' => '+44772122222',
   'fav_colour' => 'Aqua Marine'})
 
 stray = Human.new({
-  'name' => 'Stray',
+  'human_name' => 'Stray',
   'email' => 'no owner',
   'address' => 'no owner',
   'phone' => 'no owner',
@@ -63,7 +63,7 @@ human2.save()
 stray.save()
 
 animal1 = Animal.new(
-  { 'name' => 'PiPiPaPa-Pu',
+  { 'animal_name' => 'PiPiPaPa-Pu',
     'date_of_birth' => '2013-05-15',
     'type' =>  'dog',
     'fav_colour' => 'purple',
@@ -72,7 +72,7 @@ animal1 = Animal.new(
     'vet_id' => vet1.id})
 
 animal2 = Animal.new(
-  { 'name' => 'PaPaPiPi-Pu',
+  { 'animal_name' => 'PaPaPiPi-Pu',
     'date_of_birth' => '2013-05-15',
     'type' =>  'dog',
     'fav_colour' => 'blue',
@@ -81,7 +81,7 @@ animal2 = Animal.new(
     'vet_id' => vet2.id})
 
 animal3 = Animal.new(
-  { 'name' => 'PeeChiPu',
+  { 'animal_name' => 'PeeChiPu',
     'date_of_birth' => '',
     'type' =>  'dog',
     'fav_colour' => 'blue',
@@ -90,7 +90,7 @@ animal3 = Animal.new(
     'vet_id' => vet2.id})
 
 animal4 = Animal.new(
-  { 'name' => 'PeeChiPu',
+  { 'animal_name' => 'PeeChiPu',
     'date_of_birth' => '',
     'type' =>  'dog',
     'fav_colour' => 'blue',

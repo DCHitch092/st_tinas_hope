@@ -7,7 +7,7 @@ DROP TABLE humans;
 
 CREATE TABLE vets(
   id            SERIAL4 PRIMARY KEY,
-  name          VARCHAR(255),
+  vet_name          VARCHAR(255),
   role          VARCHAR(255),
   fav_colour    VARCHAR(255),
   profile_image VARCHAR(255)
@@ -15,7 +15,7 @@ CREATE TABLE vets(
 
 CREATE TABLE humans(
   id         SERIAL4 PRIMARY KEY,
-  name       VARCHAR(255),
+  human_name       VARCHAR(255),
   email      VARCHAR(255),
   address    TEXT,
   phone      VARCHAR(255),
@@ -24,7 +24,7 @@ CREATE TABLE humans(
 
 CREATE TABLE animals(
   id            SERIAL4    PRIMARY KEY,
-  name          VARCHAR(255),
+  animal_name          VARCHAR(255),
   date_of_birth VARCHAR(255),
   type          VARCHAR(255),
   fav_colour    VARCHAR(255),

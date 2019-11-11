@@ -3,11 +3,11 @@ require_relative('../db/sql_runner')
 
 class Human
 
-  attr_reader :id, :name, :email, :address, :phone, :fav_colour
+  attr_reader :id, :human_name, :email, :address, :phone, :fav_colour
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @human_name = options['human_name']
     @email = options['email']
     @address = options['address']
     @phone = options['phone']
@@ -16,24 +16,24 @@ class Human
 
   def save()
     sql = "INSERT INTO humans
-    ( name, email, address, phone, fav_colour)
+    ( human_name, email, address, phone, fav_colour)
     VALUES
     ( $1, $2, $3, $4, $5)
     RETURNING id"
-    values = [@name, @email, @address, @phone, @fav_colour]
+    values = [@human_name, @email, @address, @phone, @fav_colour]
     result = SqlRunner.run( sql, values)[0]
     @id = result['id'].to_i
   end
 
   def update()
     sql = "UPDATE humans SET
-    name = $1,
+    human_name = $1,
     email = $2,
     address = $3,
     phone = $4,
     fav_colour = $5
     WHERE id = $6"
-    values = [@name, @email, @address, @phone, @fav_colour, @id]
+    values = [@human_name, @email, @address, @phone, @fav_colour, @id]
     SqlRunner.run(  sql, values)
   end
 

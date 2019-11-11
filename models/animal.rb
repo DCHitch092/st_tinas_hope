@@ -5,12 +5,12 @@ require_relative('../models/vet')
 class Animal
 
   attr_accessor :human_id
-  attr_reader :id, :name, :date_of_birth, :type, :fav_colour, :age, :vet_id
+  attr_reader :id, :animal_name, :date_of_birth, :type, :fav_colour, :age, :vet_id
 
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @animal_name = options['animal_name']
     @date_of_birth = options['date_of_birth']
     @type = options['type']
     @fav_colour = options['fav_colour']
@@ -21,11 +21,11 @@ class Animal
 
   def save()
     sql = "INSERT INTO animals
-    ( name, date_of_birth, type, fav_colour, age, human_id, vet_id)
+    ( animal_name, date_of_birth, type, fav_colour, age, human_id, vet_id)
     VALUES
     ( $1, $2, $3, $4, $5, $6, $7)
     RETURNING id"
-    values = [ @name, @date_of_birth, @type, @fav_colour, @age, @human_id, @vet_id]
+    values = [ @animal_name, @date_of_birth, @type, @fav_colour, @age, @human_id, @vet_id]
     result = SqlRunner.run(  sql, values)[0]
     @id = result['id'].to_i
   end
@@ -43,7 +43,7 @@ class Animal
 
   def update()
     sql = "UPDATE animals SET
-    name = $1,
+    animal_name = $1,
     date_of_birth = $2,
     type = $3,
     fav_colour = $4,
@@ -51,7 +51,7 @@ class Animal
     human_id = $6
     WHERE
     id = $7"
-    values = [@name, @date_of_birth, @type, @fav_colour, @age, @human_id, @id ]
+    values = [@animal_name, @date_of_birth, @type, @fav_colour, @age, @human_id, @id ]
     SqlRunner.run( sql, values)
   end
 

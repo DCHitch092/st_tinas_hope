@@ -25,7 +25,7 @@
     <tr>
       <td colspan="<%= colspan[0] %>">
         <a href="/animals/<%= animal.id %>">
-          <p><%= animal.name %></p>
+          <p><%= animal.animal_name %></p>
         </a>
       </td>
       <td colspan="<%= colspan[1] %>">
@@ -40,7 +40,7 @@
       </td>
       <td colspan="<%= colspan[4] %>">
         <p><% human = animal.get_human()%>
-          <a href="/humans/<%= human['id'] %>"><%= human['name'] %></a></p>
+          <a href="/humans/<%= human['id'] %>"><%= human['human_name'] %></a></p>
       </td>
       <td colspan="<%= colspan[5] %>">
         <p><%= animal.fav_colour %></p>

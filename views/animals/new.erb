@@ -1,7 +1,7 @@
 <div class="new_form">
   <form class="animals" action="/animals" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="">
+    <label for="animal-name">Name:</label>
+    <input type="text" id="name" name="animal_name" value="">
     <label for="type">Type:</label>
     <input type="text" id="type" name="type" value="">
     <label for="date-of-birth">D/O/B:</label>
@@ -13,7 +13,7 @@
 
     <select id="human-id" name="human_id">
       <% for human in @humans %>
-      <option value="<%= human.id %>"><%= human.name %></option>
+      <option value="<%= human.id %>"><%= human.human_name %></option>
       <% end %>
     </select>
 
@@ -22,9 +22,9 @@
     <%= unassigned.id %>">
       <% for vet in @vets %>
         <% if vet.id == unassigned.id %>
-          <option value="<%= vet.id %>" selected ><%= vet.name %></option>
+          <option value="<%= vet.id %>" selected ><%= vet.vet_name %></option>
         <% else %>
-          <option value="<%= vet.id %>"><%= vet.name %></option>
+          <option value="<%= vet.id %>"><%= vet.vet_name %></option>
         <% end %>
       <% end %>
     </select>

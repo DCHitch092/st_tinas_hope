@@ -51,23 +51,25 @@ class Animal
     SqlRunner.run( sql, values)
   end
 
+  def get_human()
+    sql = "SELECT FROM humans
+    INNER JOIN animals
+    ON animals.human_id = humans.id
+    WHERE animals.human_id = $1"
+    values = [@human_id]
+    hunan = SqlRunner.run(  sql, values)[0]
+    return human
+  end
+
   # def delete()
   #   sql = "DELETE FROM animals
   #   WHERE id = $1"
   #   values = [@id]
   #   SqlRunner.run( sql, values)
   # end
-  def get_human()
-    sql = "SELECT * FROM humans
-    INNER JOIN human_assign
-    ON human_assign.human_id = human.id
-    WHERE human_assign.animal_id = $1"
-    values = [@id]
-    result = SqlRunner.run(  sql, values)[0]
-  end
 
-  def get_vet()
-  end
+  # def get_vet()
+  # end
 
   def get_dob()
     time = Time.new

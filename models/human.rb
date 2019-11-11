@@ -11,7 +11,7 @@ class Human
     @email = options['email']
     @address = options['address']
     @phone = options['phone']
-    @fav_colour = options['fav_colour'].to_str
+    @fav_colour = options['fav_colour'].to_s
   end
 
   def save()

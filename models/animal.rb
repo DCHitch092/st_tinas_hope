@@ -97,6 +97,13 @@ class Animal
     return age
   end
 
+  def delete()
+    sql = "DELETE FROM animals
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.find(id)
     sql = "SELECT * FROM animals
     WHERE id = $1"
@@ -111,12 +118,6 @@ class Animal
     return result.map{ |animal| Animal.new(animal)}
   end
 
-  def self.delete(id)
-    sql = "DELETE FROM animals
-    WHERE id = $1"
-    values = [id]
-    SqlRunner.run(sql, values)
-  end
 
   def self.delete_all()
     sql = "DELETE FROM animals"

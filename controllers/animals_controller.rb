@@ -9,8 +9,8 @@ get '/animals/new' do #new
 end
 
 get '/animals/:id' do #show
-  @animal_id = params[:id]
-  @animal = Animal.find(@animal_id)
+  animal_id = params[:id]
+  @animal = Animal.find(animal_id)
   erb(:'animals/show')
 end
 
@@ -35,6 +35,7 @@ end
 
 post '/animals/:id/delete' do #delete
   animal_id = params[:id]
-  Animal.delete(animal_id)
+  animal = Animal.find(animal_id)
+  animal.delete()
   redirect to '/animals'
 end

@@ -58,7 +58,8 @@ animal1 = Animal.new(
     'type' =>  'dog',
     'fav_colour' => 'purple',
     'age' => 6,
-    'human_id' => human1.id})
+    'human_id' => human1.id
+    'vet_id' => vet1.id})
 
 animal2 = Animal.new(
   { 'name' => 'PaPaPiPi-Pu',
@@ -66,7 +67,8 @@ animal2 = Animal.new(
     'type' =>  'dog',
     'fav_colour' => 'blue',
     'age' => 6,
-    'human_id' => human1.id})
+    'human_id' => human1.id
+    'vet_id' => vet2.id})
 
 animal3 = Animal.new(
   { 'name' => 'PeeChiPu',
@@ -74,28 +76,29 @@ animal3 = Animal.new(
     'type' =>  'dog',
     'fav_colour' => 'blue',
     'age' => 2,
-    'human_id' => human2.id})
+    'human_id' => human2.id
+    'vet_id' => vet2.id})
 
-animal1.save()
-animal2.save()
+animal1.new_animal()
+animal2.new_animal()
 animal3.new_animal()
 
-vet_assign1 = VetAssign.new({
-  'animal_id' => animal1.id,
-  'vet_id' => vet1.id
-  })
-vet_assign2 = VetAssign.new({
-  'animal_id' => animal2.id,
-  'vet_id' => vet2.id
-  })
-vet_assign3 = VetAssign.new({
-  'animal_id' => animal1.id,
-  'vet_id' => vet2.id
-  })
-
-  vet_assign1.save()
-  vet_assign2.save()
-  vet_assign3.save()
+# vet_assign1 = VetAssign.new({
+#   'animal_id' => animal1.id,
+#   'vet_id' => vet1.id
+#   })
+# vet_assign2 = VetAssign.new({
+#   'animal_id' => animal2.id,
+#   'vet_id' => vet2.id
+#   })
+# vet_assign3 = VetAssign.new({
+#   'animal_id' => animal1.id,
+#   'vet_id' => vet2.id
+#   })
+#
+#   vet_assign1.save()
+#   vet_assign2.save()
+#   vet_assign3.save()
 
 # human_assign1 = HumanAssign.new({
 #   'animal_id' => animal1.id,

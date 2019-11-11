@@ -33,6 +33,7 @@ end
 
 post '/humans/:id/delete' do #delete
   human_id = params[:id]
-  Human.delete(human_id)
+  human = Human.find(human_id)
+  human.delete()
   redirect to '/humans'
 end

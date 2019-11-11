@@ -1,0 +1,5 @@
+<h1>Which animal would you like to see notes for?</h1>
+
+<% for animal in @animals %>
+  <a href="<%= animal.id %>"><%= animal.name %></a>
+<% end %>

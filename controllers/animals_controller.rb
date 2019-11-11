@@ -23,6 +23,15 @@ get '/animals/:id/edit' do #edit
   erb(:'animals/edit')
 end
 
+get '/animals/:id/notes' do #edit
+  animal_id = params[:id]
+  @animal = Animal.find(animal_id)
+  @notes = Note.find_by_animal(animal_id)
+  # @humans = Human.all()
+  # @vets = Vet.all()
+  erb(:'animals/edit')
+end
+
 post '/animals' do #create
   @new_animal=Animal.new(params)
   @new_animal.new_animal()

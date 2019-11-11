@@ -1,4 +1,4 @@
 get '/notes' do   #index
-  @notes = Note.all()
+  @animals = Animal.all()
   erb(:'notes/index')
 end

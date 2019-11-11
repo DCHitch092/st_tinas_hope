@@ -6,6 +6,7 @@ require('pry')
 require_relative('./controllers/vets_controller')
 require_relative('./controllers/animals_controller')
 require_relative('./controllers/humans_controller')
+require_relative('./controllers/notes_controller')
 # require_relative('./controllers/human_assign_controller')
 # require_relative('./controllers/vet_assign_controller')
 

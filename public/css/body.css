@@ -1,8 +1,12 @@
-.body-container{  
+.body-container{
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     /* margin: 6%; */
     flex-wrap: wrap;
-    /* flex-direction: row;
-}
+    /* flex-direction: row; */
+  }
+
+  .two-column-left, .two-column-right{
+    
+  }

@@ -18,7 +18,12 @@ a {
 }
 
 body{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.3em;
 }
 
 .body-container{
@@ -29,4 +34,19 @@ body{
 
 ul {
   list-style-type: none;
+}
+
+.flex-columns{
+  display: flex;
+  flex-direction: column;
+}
+.flex-rows{
+  display: flex;
+  flex-direction: rows;
+}
+
+.justify-flex-start{
+  display: flex;
+  justify-content: flex-start;
+  width:80%;
 }

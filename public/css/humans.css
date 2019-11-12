@@ -1,0 +1,16 @@
+#human-add{
+  background-color: #66CC99;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0 1em 0;
+  margin: 1% 0 0 0;
+  color: #fff;
+}
+
+#human-add a{
+  color: #fff;
+}
+
+#human-add a:hover{
+  color: #3366CC;
+}

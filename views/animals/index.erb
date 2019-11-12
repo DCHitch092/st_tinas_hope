@@ -1,79 +1,55 @@
-<div>
+<div class="flex-column">
+<!-- <div class="justify-flex-start"> -->
+  <h1>All The Animals</h1>
+<!-- </div> -->
   <table id="animals_table">
-    <%  colspan =[1,3,2,1,1,1,1,2,2] %>
-    <%  total_colspan = 0 %>
-    <%  for each in colspan
-    total_colspan += each %>
-    <% end %>
-    <tr>
-      <td colspan="<%= colspan[0] %>">
-        <p>Name</p></td>
-      <td colspan="<%= colspan[1] %>">
-        <p>Type</p></td>
-      <td colspan="<%= colspan[2] %>">
-        <p> Age (years)</p></td>
-      <td colspan="<%= colspan[3] %>">
-        <p> Date of birth</p></td>
-      <td colspan="<%= colspan[4] %>">
-        <p>Assigned Human</p></td>
-      <td colspan="<%= colspan[5] %>">
-        <p>Assigned Vet</p></td>
-      <td colspan="<%= colspan[6] %>">
-      <p>Favourite colour</p></td>
-      <td colspan="<%= colspan[7] %>"></td>
-      <td colspan="<%= colspan[8] %>"></td>
-    </tr>
+    <thead>
+      <th><p>Name</p></th>
+      <th><p>Type</p></th>
+      <th><p>Age (years)</p></th>
+      <th><p>Date of birth</p></th>
+      <th><p>Assigned Human</p></th>
+      <th><p>Assigned Vet</p></th>
+      <th><p>Favourite colour</p></th>
+      <th></th>
+      <th></th>
+
+    </thead>
+    <% table_count = 0 %>
     <% for animal in @animals %>
-    <tr>
-      <td colspan="<%= colspan[0] %>">
-        <a href="/animals/<%= animal.id %>">
-          <p><%= animal.animal_name %></p>
-        </a>
+      <tr class="<% table_count += 1 %><%= "even" if table_count.even? %><%= "odd" if table_count.odd? %>">
+      <td><a href="/animals/<%= animal.id %>">
+          <p><%= animal.animal_name %></p></a></td>
+      <td><p><%= animal.type %></p></td>
+      <td><p><% @up_to_date_age = animal.get_age() %>
+          <%= @up_to_date_age %></p></td>
+      <td><p><%= animal.date_of_birth %></p></td>
+      <td><p><% human = animal.get_human()%>
+          <a href="/humans/<%= human['id'] %>">
+            <%= human['human_name'] %></a></p>
       </td>
-      <td colspan="<%= colspan[1] %>">
-        <p><%= animal.type %></p>
-      </td>
-      <td colspan="<%= colspan[2] %>">
-        <p><% @up_to_date_age = animal.get_age() %>
-          <%= @up_to_date_age %></p>
-      </td>
-      <td colspan="<%= colspan[3] %>">
-        <p><%= animal.date_of_birth %></p>
-      </td>
-      <td colspan="<%= colspan[4] %>">
-        <p><% human = animal.get_human()%>
-          <a href="/humans/<%= human['id'] %>"><%= human['human_name'] %></a></p>
-      </td>
-      <td colspan="<%= colspan[5] %>">
-        <p><% vet = animal.get_vet()%>
-          <% if vet['vet_name'] == 'Unassigned' %>
-            <a href="/animals/<%= animal.id %>/assign-vet">Click to assign vet</a></p>
-          <% else %>
-            <a href="/vets/<%= vet['id'] %>"><%= vet['vet_name'] %></a></p>
-          <% end %>
-      </td>
-      <td colspan="<%= colspan[6] %>">
-        <p><%= animal.fav_colour %></p>
-      </td>
-      <td colspan="<%= colspan[7] %>">
-        <a href="/animals/<%= animal.id %>/edit">edit</a>
-      </td>
-      <td colspan="<%= colspan[8] %>">
-
-        <form action="/animals/<%= animal.id %>/delete" method="post">
-          <button type="submit" name="button">Delete animal</button>
-        </form>
-
-      </td>
-
+      <% vet = animal.get_vet()%>
+        <% if vet['vet_name'] == 'Unassigned' %>
+          <td class="unassigned">
+          <p><a href="/animals/<%= animal.id %>/assign-vet">Click to assign vet</a></p>
+        <% else %>
+          <td  ><p>
+          <a href="/vets/<%= vet['id'] %>"><%= vet['vet_name'] %></a></p>
+        <% end %></td>
+      <td style="color:#fff; opacity:0.4; background-color:<%= animal.fav_colour %>"><p><%= animal.fav_colour %></p></td>
+      <td><a href="/animals/<%= animal.id %>/edit">edit</a></td>
+      <td><form action="/animals/<%= animal.id %>/delete" method="post">
+        <button type="submit" name="button">Delete animal</button>
+      </form></td>
     </tr>
-      <% end %>
-    <tr>
-      <td colspan="<%= total_colspan %>">
-        <a href="/animals/new">
-          <p>Add New Animal</p>
-        </a>
-      </td>
-    </tr>
+    <% end %>
   </table>
+
+ <div class="span" id="animal-delete"></div>
+
+  <div class="span" id="animal-add">
+    <a href="/animals/new">
+      <h3>Add New Animal</h3></a>
+  </div>
+
 </div>

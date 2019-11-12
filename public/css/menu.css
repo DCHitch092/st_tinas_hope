@@ -90,3 +90,8 @@ nav .logo {
 .menu_container a:hover, .menu_container a:focus, .menu_container a:active {
   color: #FF6633;
 }
+
+.menu .medicines a {
+  color: #cccccc;
+
+}

@@ -12,6 +12,17 @@ footer {
     justify-content: center; */
 }
 
+.footer-spacer{
+  height: 2em;
+  padding: 2%;
+}
+
+.footer-spacer:after {
+  content: "";
+  display: block;
+}
+
+
 footer a {
   text-decoration: none;
   color: #fff;

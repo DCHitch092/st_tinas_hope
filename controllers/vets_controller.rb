@@ -35,6 +35,7 @@ end
 
 post '/vets/:id/delete' do #delete
   vet_id = params[:id]
-  Vet.delete(vet_id)
+  vet = Vet.find(vet_id)
+  vet.delete()
   redirect to '/vets'
 end

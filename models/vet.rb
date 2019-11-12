@@ -30,7 +30,21 @@ class Vet
     vet_name = $1,
     role = $2,
     fav_colour = $3,
-    profile_image = $4
+    profile_image = $4,
+    deleted = $5
+    WHERE
+    id = $6"
+    values = [ @vet_name, @role, @fav_colour, @profile_image, @deleted, @id ]
+    SqlRunner.run(  sql, values )
+  end
+
+  def delete()
+    @deleted = TRUE
+    sql = "UPDATE vets SET
+    vet_name = $1,
+    role = $2,
+    fav_colour = $3,
+    profile_image = $4,
     deleted = $5
     WHERE
     id = $6"
@@ -66,18 +80,6 @@ class Vet
     return result = Vet.new(vet)
   end
 
-  def self.delete(id)
-    sql = "UPDATE vets SET
-    vet_name = $1,
-    role = $2,
-    fav_colour = $3,
-    profile_image = $4
-    deleted = $5
-    WHERE
-    id = $6"
-    values = [ @vet_name, @role, @fav_colour, @profile_image, TRUE, @id ]
-    SqlRunner.run(  sql, values )
-  end
 
   def self.delete_all()
     sql = "DELETE FROM vets"

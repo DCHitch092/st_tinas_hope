@@ -4,10 +4,11 @@
 
     <% for vet in @vets %>
     <% if vet.id != @unassigned.id %>
-      <li <%= "class=deleted" if vet.deleted == TRUE %>>
+      <li <%= "class=\"row-deleted\"" if vet.deleted == "t" %>>
         <a href="/vets/<%= vet.id %>"><img src="/images/<%= vet.profile_image %>" alt="image of <%= vet.vet_name %>"></a>
         <a href="/vets/<%= vet.id %>"><h2><%= vet.vet_name %></h2></a>
         <p><%= vet.role %></p>
+        <%= "<p>This vet is no longer at this practice</p>" if vet.deleted == "t" %>
         <p><a href="/vets/<%= vet.id %>/edit">Edit Vet</a></p>
 
       <form action="/vets/<%= vet.id %>/delete" method="post">

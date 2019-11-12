@@ -1,7 +1,10 @@
 <div class="new_form">
+
   <form class="vets" action="/vets" method="post">
+
     <label for="vet-name">Name:</label>
     <input type="text" id="vet-name" name="vet_name" value="">
+
     <label for="name">Role:</label>
     <select id="role" name="role">
       <option value="nurse">nurse</option>
@@ -10,12 +13,16 @@
       <option value="administrator">receptionist</option>
       <option value="administrator">clinical lead</option>
     </select>
+
     <label for="fav-colour">Favourite Colour:</label>
     <input type="color" id="fav-colour" name="fav_colour" value="">
+
     <label for="profile-image">Profile Image</label>
     <input type="text" id="profile-image" name="profile_image" value="">
+
     <input type="hidden" id="deleted" name="deleted" value="FALSE">
+
     <button type="submit" name="vets">Add Vet</button>
-</form>
+  </form>
 
 </div>

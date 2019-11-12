@@ -46,9 +46,11 @@ class Note
   end
 
   def get_human()
-    sql = "SELECT human.human_name FROM humans
+    sql = "SELECT humans.human_name FROM humans
+    INNER JOIN animals
+    ON animals.human_id = humans.id
     INNER JOIN notes
-    ON notes.human_id = humans.id
+    ON animals.id = notes.animal_id
     WHERE notes.id = $1"
     values = [@id]
     result = SqlRunner.run( sql, values)[0]

@@ -12,9 +12,9 @@ end
 get '/notes/:id' do #show
   note_id = params[:id]
   @note = Note.find(note_id)
-  @vet_name = @note.get_author()
-  @animal_name = @note.get_patient()
-  @human_name = @note.get_human()
+  @vet_name = @note.get_author()['vet_name']
+  @animal_name = @note.get_patient()['animal_name']
+  @human_name = @note.get_human()['human_name']
   erb(:'notes/show')
 end
 

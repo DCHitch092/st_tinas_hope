@@ -1,8 +1,8 @@
-<h2>Note #<%= @note.id %> - #Animal_name(<%= @note.animal_id %>)</h2>
-<h3>Their Human: #Human_name</h3>
+<h2>Note #<%= @note.id %> - <%= @animal_name %>(<%= @note.animal_id %>)</h2>
+<h3>Their Human: <%= @human_name %></h3>
 
 <p><%= @note.body %></p>
-<p> written by <a href='/vets/<%= @note.vet_id %>'>#Vet_Name</a> at
+<p> written by <a href='/vets/<%= @note.vet_id %>'><%= @vet_name %></a> at
 <%= @note.get_time() %></p>
 
 <a href="/animals/<%= @note.animal_id %>"><< back to animal</a>

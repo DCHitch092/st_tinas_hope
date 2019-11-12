@@ -3,8 +3,6 @@
 
 <p><%= @note.body %></p>
 <p> written by <a href='/vets/<%= @note.vet_id %>'>#Vet_Name</a> at
-<% time = @note.timestamp
-  date = Date.parse time
- %><%= date.strftime("at %e %b, %y (%H:%M)") %></p>
+<% @time %></p>
 
 <a href="/animals/<%= @note.animal_id %>"><< back to animal</a>

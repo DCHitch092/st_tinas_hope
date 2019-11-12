@@ -7,6 +7,7 @@ require_relative('./controllers/vets_controller')
 require_relative('./controllers/animals_controller')
 require_relative('./controllers/humans_controller')
 require_relative('./controllers/notes_controller')
+require_relative('./controllers/medicines_controller')
 
 # required model files
 require_relative('./models/vet')

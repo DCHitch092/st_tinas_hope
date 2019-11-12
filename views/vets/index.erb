@@ -1,6 +1,7 @@
-<div>
-  <h1>All The Vets</h1>
-  <ul id="vets_table">
+<h1>All The Vets</h1>
+  <div class="content">
+
+    <ul id="vets_table">
 
     <% for vet in @vets %>
     <% if vet.id != @unassigned.id %>
@@ -11,27 +12,27 @@
         <%= "<p>This vet is no longer at this practice</p>" if vet.deleted == "t" %>
         <p><a href="/vets/<%= vet.id %>/edit">Edit Vet</a></p>
 
-        <% if vet.deleted == 'f' %>
-          <form action="/vets/<%= vet.id %>/delete" method="post">
-            <button type="submit" name="button">Delete vet</button>
-          </form>
-        <% else %>
-        <form action="/vets/<%= vet.id %>/reinstate" method="post">
-          <input type="hidden" name="vet_name" value="<%= vet.vet_name %>">
-          <input type="hidden" name="role" value="<%= vet.role %>">
-          <input type="hidden" name="fav_colour" value="<%= vet.fav_colour %>">
-          <input type="hidden" name="profile_image" value="<%= vet.profile_image %>">
-          <input type="hidden" name="deleted" value="f">
+          <% if vet.deleted == 'f' %>
+            <form action="/vets/<%= vet.id %>/delete" method="post">
+              <button type="submit" name="button">Delete vet</button>
+            </form>
+          <% else %>
+            <form action="/vets/<%= vet.id %>/reinstate" method="post">
+              <input type="hidden" name="vet_name" value="<%= vet.vet_name %>">
+              <input type="hidden" name="role" value="<%= vet.role %>">
+              <input type="hidden" name="fav_colour" value="<%= vet.fav_colour %>">
+              <input type="hidden" name="profile_image" value="<%= vet.profile_image %>">
+              <input type="hidden" name="deleted" value="f">
 
-          <button type="submit" name="button">Reinstate</button>
-        </form>
+              <button type="submit" name="button">Reinstate</button>
+            </form>
+          <% end %>
         <% end %>
-      <% end %>
-      <hr></li>
+        <hr>
+      </li>
     <% end %>
-
-  </ul>
-  <nav>
-    <a href="/vets/new">Add New Vet</a>
-  </nav>
-</div>
+    </ul>
+  </div>
+  <div class="footer">
+    <a href="/vets/new">Add New Vet</a>    
+  </div>

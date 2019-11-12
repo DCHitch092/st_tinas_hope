@@ -16,3 +16,9 @@ pink - #FFCCCC; */
 a {
   text-decoration: none;
 }
+
+.container{
+  display:flex;
+  justify-content: center;
+  margin-top: 10%;
+}

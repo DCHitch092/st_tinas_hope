@@ -87,7 +87,8 @@ class Vet
   end
 
   def self.all()
-    sql = "SELECT * FROM vets"
+    sql = "SELECT * FROM vets
+    ORDER BY deleted ASC"
     result = SqlRunner.run(sql)
     return result.map{ |vet|  Vet.new(vet)}
   end

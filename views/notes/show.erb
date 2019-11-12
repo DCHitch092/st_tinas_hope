@@ -1,8 +1,10 @@
-<h2>Note #<%= note.id %> - #Animal_name(<%= note.animal_id %>)</h2>
+<h2>Note #<%= @note.id %> - #Animal_name(<%= @note.animal_id %>)</h2>
 <h3>Their Human: #Human_name</h3>
 
-<p><%= note.body %>
-written by <a href='/vets/<%= note.vet_id %>'>#Vet_Name at <%= note.timestamp %></p>
+<p><%= @note.body %></p>
+<p> written by <a href='/vets/<%= @note.vet_id %>'>#Vet_Name</a> at
+<% time = @note.timestamp
+  date = Date.parse time
+ %><%= date.strftime("at %e %b, %y (%H:%M)") %></p>
 
-<a href="/animals/<%= note.animal_id %>"><< back to animal</a>
-<< back to animal
+<a href="/animals/<%= @note.animal_id %>"><< back to animal</a>

@@ -41,6 +41,16 @@ class Animal
     return self
   end
 
+  def update_animal()
+    if @date_of_birth == ''
+      @date_of_birth = self.get_dob()
+    else
+      @age = self.get_age()
+    end
+    self.update()
+    return self
+  end
+
   def update()
     sql = "UPDATE animals SET
     animal_name = $1,
@@ -48,10 +58,11 @@ class Animal
     type = $3,
     fav_colour = $4,
     age = $5,
-    human_id = $6
+    human_id = $6,
+    vet_id = $7
     WHERE
-    id = $7"
-    values = [@animal_name, @date_of_birth, @type, @fav_colour, @age, @human_id, @id ]
+    id = $8"
+    values = [@animal_name, @date_of_birth, @type, @fav_colour, @age, @human_id, @vet_id, @id ]
     SqlRunner.run( sql, values)
   end
 
@@ -105,6 +116,10 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
+  def colour_string()
+    @fav_colour.slice!(1..6)
+    return @fav_colour
+  end
 
   def self.waiting_room()
     vet = Vet.find_unassigned()

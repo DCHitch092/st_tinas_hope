@@ -46,7 +46,11 @@
       </td>
       <td colspan="<%= colspan[5] %>">
         <p><% vet = animal.get_vet()%>
-          <a href="/vets/<%= vet['id'] %>"><%= vet['vet_name'] %></a></p>
+          <% if vet['vet_name'] == 'Unassigned' %>
+            <a href="/animals/<%= animal.id %>/assign-vet">Click to assign vet</a></p>
+          <% else %>
+            <a href="/vets/<%= vet['id'] %>"><%= vet['vet_name'] %></a></p>
+          <% end %>
       </td>
       <td colspan="<%= colspan[6] %>">
         <p><%= animal.fav_colour %></p>

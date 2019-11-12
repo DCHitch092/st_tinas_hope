@@ -35,15 +35,6 @@ class Note
     return result
   end
 
-  def self.find_by_animal(id)
-    sql = "SELECT * FROM notes
-    WHERE animal_id = $1
-    ORDER BY notes.timestamp DESC"
-    values = [id]
-    result = SqlRunner.run( sql, values)
-    return result.map{|note| Note.new(note)}
-  end
-
   def get_patient()
     sql = "SELECT animals.animal_name FROM animals
     INNER JOIN notes
@@ -54,10 +45,29 @@ class Note
     return result
   end
 
+  def get_human()
+    sql = "SELECT human.human_name FROM humans
+    INNER JOIN notes
+    ON notes.human_id = humans.id
+    WHERE notes.id = $1"
+    values = [@id]
+    result = SqlRunner.run( sql, values)[0]
+    return result
+  end
+
   def get_time()
     time = self.timestamp
     date = Time.parse time
     return date.strftime("%e %b, %y (%H:%M)")
+  end
+
+  def self.find_by_animal(id)
+    sql = "SELECT * FROM notes
+    WHERE animal_id = $1
+    ORDER BY notes.timestamp DESC"
+    values = [id]
+    result = SqlRunner.run( sql, values)
+    return result.map{|note| Note.new(note)}
   end
 
   def self.find(id)

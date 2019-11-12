@@ -13,6 +13,8 @@ get '/notes/:id' do #show
   note_id = params[:id]
   @note = Note.find(note_id)
   @vet_name = @note.get_author()
+  @animal_name = @note.get_patient()
+  @human_name = @note.get_human()
   erb(:'notes/show')
 end
 

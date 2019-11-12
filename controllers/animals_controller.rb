@@ -13,7 +13,6 @@ get '/animals/:id' do #show
   animal_id = params[:id]
   @animal = Animal.find(animal_id)
   @notes = Note.find_by_animal(animal_id)
-  
   erb(:'animals/show')
 end
 
@@ -55,17 +54,17 @@ post '/animals' do #create
 end
 
 post '/animals/:id' do #update
-  Animal.new(params).update()
+  animal = Animal.new(params).update_animal()
   erb(:'animals/update')
 end
 
-post '/animals/:id/assign-vet' do
-  vet_id = params[:vet_id]
-  animal = Animal.find(:id)
-  animal.vet_id = vet_id
-  assigned_animal = Animal.new(animal).update()
-  redirect to '/animals'
-end
+# post '/animals/:id/assign-vet' do
+#   vet_id = params[:vet_id]
+#   animal = Animal.find(:id)
+#   animal.vet_id = vet_id
+#   assigned_animal = Animal.new(animal).update()
+#   redirect to '/animals'
+# end
 
 post '/animals/:id/delete' do #delete
   animal_id = params[:id]

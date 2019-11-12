@@ -1,18 +1,19 @@
 <div class="vet_assign">
 
-    <table>
-      <tr>
-        <td>Name:<%= @animal.animal_name %></td></tr>
-        <tr><td>Type: <%= @animal.type %></td></tr>
-        <tr><td>Date Of Birth:<%= @animal.date_of_birth %></td></tr>
-        <tr><td>Age: <%= @animal.age %></td></tr>
-        <tr><td>Favourite Color:<%= @animal.fav_colour %></td>
-      </tr>
-    </table>
-  <form class="animals" action="/animals/vet_assign" method="post">
-    <select id="vet-id" name="vet_id" selected="
-    <% unassigned = Vet.find_unassigned() %>
-    <%= unassigned.id %>">
+  <table>
+    <tr><td>Name:<%= @animal.animal_name %></td></tr>
+    <tr><td>Type: <%= @animal.type %></td></tr>
+    <tr><td>Date Of Birth:<%= @animal.date_of_birth %></td></tr>
+    <tr><td>Age: <%= @animal.age %></td></tr>
+    <tr><td>Favourite Color:<%= @animal.fav_colour %></td></tr>
+  </table>
+
+  <hr>
+
+  <form class="animals" action="/animals/<%= @animal.id %>" method="post">
+
+    <select id="vet-id" name="vet_id"
+    <% unassigned = Vet.find_unassigned() %>>
       <% for vet in @vets %>
         <% if vet.id.to_i == unassigned.id.to_i %>
           <option value="<%= vet.id %>" selected ><%= vet.vet_name %></option>
@@ -21,6 +22,13 @@
         <% end %>
       <% end %>
     </select>
+
+    <input type="hidden" name="animal_name" value="<%= @animal.animal_name %>">
+    <input type="hidden" name="type" value="<%= @animal.type %>">
+    <input type="hidden" name="date_of_birth" value="<%= @animal.date_of_birth %>">
+    <input type="hidden" name="fav_colur" value="<%= @animal.fav_colour %>">
+    <input type="hidden" name="human_id" value="<%= @animal.human_id %>">
+
     <button type="submit" name="animals">Assign Vet</button>
 </form>
 

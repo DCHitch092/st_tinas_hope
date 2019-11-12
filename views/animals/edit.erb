@@ -7,26 +7,38 @@
     <label for="date-of-birth">D/O/B:</label>
     <input type="date" id="date-of-birth" name="date_of_birth" value="<%= @animal.date_of_birth %>">
     <label for="fav-colour">Favourite Colour:</label>
-    <input type="color" id="fav-colour" name="fav_colour" value="<%= @animal.fav_colour %>">
+    <input type="color" id="fav-colour" name="fav_colour" value="<% colour = @animal.fav_colour%><%= colour %>">
     <label for="age">Age:</label>
     <input type="text" id="age" name="age" value="<%= @animal.age %>">
+
+<hr>
+    <!-- Selection for Assigned Human -->
+    <label for="human-id">Assigned Human:</label>
+    <select id="human-id" name="human_id" selected="<%= @animal.human_id %>">
+      <% for human in @humans %>
+        <% if human.id == @animal.human_id.to_i %>
+          <option value="<%= human.id %>" selected><%= human.human_name %></option>
+        <% else %>
+          <option value="<%= human.id %>"> <%= human.human_name %></option>
+        <% end %>
+      <% end %>
+    </select>
+
+<hr>
+    <!-- Selection for Assigned Vet -->
+    <label for="vet-id">Assigned Vet:</label>
+    <select id="vet-id" name="vet_id" selected="<%= @animal.vet_id %>">
+      <% for vet in @vets %>
+        <% if vet.id == @animal.vet_id.to_i %>
+          <option value="<%= vet.id %>" selected><%= vet.vet_name %></option>
+        <% else %>
+          <option value="<%= vet.id %>"> <%= vet.vet_name %></option>
+        <% end %>
+      <% end %>
+    </select>
+<hr>
 
     <button type="submit" name="animals">Update Animal</button>
 </form>
 
-    <form class="assign-human" action="/human-assign/<%= @animal.id %>/assign-human" method="post">
-      <select id="human-id" name="human_id" selected="<%= @animal.human_id %>">
-        <% for human in @humans %>
-          <% if human.id == @animal.human_id.to_i %>
-            <option value="<%= human.id %>" selected><%= human.human_name %></option>
-          <% else %>
-            <option value="<%= human.id %>"> <%= human.human_name %></option>
-          <% end %>
-        <% end %>
-      </select>
-
-      <button type="submit" name="button">Assign Human</button>
-    </form>
-
-  <hr>
 </div>

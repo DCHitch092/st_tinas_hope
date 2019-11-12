@@ -39,7 +39,7 @@ vet4 = Vet.new(
     'deleted' => FALSE})
 
 vet5 = Vet.new(
-  { 'vet_name' => 'Nurse Beulla',
+  { 'vet_name' => 'Nurse Betulla',
     'role' => 'Nurse',
     'fav_colour' => 'orange',
     'profile_image' => 'nurse-betulla.jpg',
@@ -59,6 +59,13 @@ deleted_test = Vet.new(
     'profile_image' => 'timmy.jpg',
     'deleted' => TRUE})
 
+deleted_test2 = Vet.new(
+  { 'vet_name' => 'Butterman',
+    'role' => 'Nurse',
+    'fav_colour' => 'Not Rainbow',
+    'profile_image' => 'butterman.jpg',
+    'deleted' => TRUE})
+
 vet1.save()
 vet2.save()
 vet3.save()
@@ -66,6 +73,7 @@ vet4.save()
 vet5.save()
 unassigned.save()
 deleted_test.save()
+deleted_test2.save()
 
 human1 = Human.new({
   'human_name' => 'Hitch',
@@ -79,7 +87,7 @@ human2 = Human.new({
   'email' => 'maz@hitch.com',
   'address' => '124 Maz Village',
   'phone' => '+44772122222',
-  'fav_colour' => 'Aqua Marine'})
+  'fav_colour' => '#17bab6'})
 
 stray = Human.new({
   'human_name' => 'Stray',
@@ -94,90 +102,90 @@ stray.save()
 
 animal1 = Animal.new(
   { 'animal_name' => 'PiPiPaPa-Pu',
-    'date_of_birth' => '2013-05-15',
+    'date_of_birth' => '2012-05-15',
     'type' =>  'dog',
-    'fav_colour' => 'purple',
-    'age' => 6,
+    'fav_colour' => 'beige',
+    'age' => 7,
     'human_id' => human1.id,
     'vet_id' => vet1.id})
 
 animal2 = Animal.new(
   { 'animal_name' => 'PaPaPiPi-Pu',
-    'date_of_birth' => '2013-05-15',
+    'date_of_birth' => '2012-05-15',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
-    'age' => 6,
+    'fav_colour' => 'cream',
+    'age' => 7,
     'human_id' => human1.id,
     'vet_id' => vet2.id})
 
 animal3 = Animal.new(
   { 'animal_name' => 'PeeChiPu',
-    'date_of_birth' => '',
+    'date_of_birth' => '2014-05-15',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
-    'age' => 2,
+    'fav_colour' => 'undisclosed',
+    'age' => 5,
     'human_id' => human2.id,
     'vet_id' => vet2.id})
 
 animal4 = Animal.new(
   { 'animal_name' => 'Te-Tina',
-    'date_of_birth' => '',
+    'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
-    'age' => 2,
+    'fav_colour' => 'baby blue',
+    'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
 
 animal5 = Animal.new(
   { 'animal_name' => 'Te-Tina',
-    'date_of_birth' => '',
+    'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
-    'age' => 2,
+    'fav_colour' => 'sky blue',
+    'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
 
 animal6 = Animal.new(
   { 'animal_name' => 'Te-Tim',
-    'date_of_birth' => '',
+    'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
-    'age' => 2,
+    'fav_colour' => 'navy blue',
+    'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
 
 animal7 = Animal.new(
   { 'animal_name' => 'Te-Tina Fe-Fey',
-    'date_of_birth' => '',
+    'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
-    'age' => 2,
+    'fav_colour' => 'royal blue',
+    'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
 
 animal8 = Animal.new(
   { 'animal_name' => 'BoBo',
-    'date_of_birth' => '',
+    'date_of_birth' => '2017-06-03',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
-    'age' => 2,
+    'fav_colour' => 'red and white stripey',
+    'age' => '2',
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
 
 animal9 = Animal.new(
   { 'animal_name' => 'ViVi-VaVaVu',
-    'date_of_birth' => '',
+    'date_of_birth' => '2018-08-10',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
+    'fav_colour' => 'unknown',
     'age' => 2,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
 
 animal11 = Animal.new(
   { 'animal_name' => 'VaVa-ViViVu',
-    'date_of_birth' => '',
+    'date_of_birth' => '2018-08-10',
     'type' =>  'dog',
-    'fav_colour' => 'blue',
+    'fav_colour' => 'unknown',
     'age' => 2,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})

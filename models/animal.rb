@@ -121,8 +121,8 @@ class Animal
     sql = "SELECT * FROM animals
     WHERE id = $1"
     values = [id]
-    human = SqlRunner.run( sql, values)[0]
-    return result = Animal.new(human)
+    animal = SqlRunner.run( sql, values)[0]
+    return result = Animal.new(animal)
   end
 
   def self.all()

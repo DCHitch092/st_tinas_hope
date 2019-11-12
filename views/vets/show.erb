@@ -1,4 +1,5 @@
 <h1>Name: <%= @vet.vet_name %></h1>
+<%= "<p>This vet is no longer at this hospital.</p>" if @vet.deleted == TRUE %>
 <p><%= @vet.role %></p>
 <img src="/images/<%= @vet.profile_image %>">
 <p>Favourite Colour: <%= @vet.fav_colour %></p>

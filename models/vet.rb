@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 
 class Vet
 
-  attr_reader :id, :vet_name, :role, :fav_colour, :profile_image
+  attr_reader :id, :vet_name, :role, :fav_colour, :profile_image, :deleted
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -11,15 +11,16 @@ class Vet
     @role = options['role']
     @fav_colour = options['fav_colour']
     @profile_image = options['profile_image']
+    @deleted = options['deleted']
   end
 
   def save()
     sql = "INSERT INTO vets
-    ( vet_name, role, fav_colour, profile_image )
+    ( vet_name, role, fav_colour, profile_image, deleted )
     VALUES
-    ( $1, $2, $3, $4 )
+    ( $1, $2, $3, $4, $5 )
     RETURNING id;"
-    values = [ @vet_name, @role, @fav_colour, @profile_image ]
+    values = [ @vet_name, @role, @fav_colour, @profile_image, @deleted ]
     result = SqlRunner.run( sql, values)[0]
     @id = result['id'].to_i
   end
@@ -30,9 +31,10 @@ class Vet
     role = $2,
     fav_colour = $3,
     profile_image = $4
+    deleted = $5
     WHERE
-    id = $5"
-    values = [ @vet_name, @role, @fav_colour, @profile_image, @id ]
+    id = $6"
+    values = [ @vet_name, @role, @fav_colour, @profile_image, @deleted, @id ]
     SqlRunner.run(  sql, values )
   end
 
@@ -65,9 +67,15 @@ class Vet
   end
 
   def self.delete(id)
-    sql = "DELETE FROM vets
-    WHERE id = $1"
-    values = [ id ]
+    sql = "UPDATE vets SET
+    vet_name = $1,
+    role = $2,
+    fav_colour = $3,
+    profile_image = $4
+    deleted = $5
+    WHERE
+    id = $6"
+    values = [ @vet_name, @role, @fav_colour, @profile_image, TRUE, @id ]
     SqlRunner.run(  sql, values )
   end
 

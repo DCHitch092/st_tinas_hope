@@ -4,7 +4,7 @@ require_relative('../models/human')
 require_relative('../models/note')
 # require_relative('../models/vet_assign')
 # require_relative('../models/human_assign')
-require('time')
+
 require('pry')
 
 # VetAssign.delete_all()
@@ -103,12 +103,16 @@ animal2.new_animal()
 animal3.new_animal()
 animal4.new_animal()
 
+# timestring1 = 'Wed, 26 May 2017 14:00:00 +0800'
+# Time.parse(string).strftime('%F %T %z')
+# #=> "2017-05-26 14:00:00 +0800"
+
 note3 = Note.new(
   {
     'animal_id' => animal1.id,
     'vet_id' => vet1.id,
     'body' => "looks much better, thanks to the strawberries",
-    'timestamp' => Time.parse("2019-09-27 12:00")
+    'timestamp' => "2019-09-20 09:00:00 +0000"
   }
 )
 
@@ -117,7 +121,7 @@ note2 = Note.new(
     'animal_id' => animal2.id,
     'vet_id' => vet2.id,
     'body' => "poor chump needs a tickle",
-    'timestamp' => Time.parse("2019-10-11 13:32")
+    'timestamp' => "2018-12-26 14:00:00 +0000"
   }
 )
 note1 = Note.new(
@@ -125,7 +129,7 @@ note1 = Note.new(
     'animal_id' => animal1.id,
     'vet_id' => vet2.id,
     'body' => "looks unwell, maybe needs strawberries",
-    'timestamp' => Time.parse("2019-06-08 08:22")
+    'timestamp' => "2019-10-26 17:23:00 +0000"
   }
 )
 

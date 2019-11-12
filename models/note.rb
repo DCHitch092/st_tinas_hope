@@ -53,6 +53,15 @@ class Note
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM notes
+    where id = $1"
+    values = [id]
+    result = SqlRunner.run( sql,  values)[0]
+    return note = Note.new(result)
+  end
+
+
   def self.all()
     sql = "SELECT * FROM notes"
     result = SqlRunner.run(sql)

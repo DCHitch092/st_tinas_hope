@@ -14,6 +14,7 @@ class Note
   end
 
   def save()
+    @timestamp = Time.new
     sql = "INSERT INTO notes
     ( animal_id, vet_id, body, timestamp)
     VALUES
@@ -55,7 +56,7 @@ class Note
 
   def get_time()
     time = self.timestamp
-    date = Date.parse time
+    date = Time.parse time
     return date.strftime("%e %b, %y (%H:%M)")
   end
 

@@ -3,6 +3,12 @@ get '/notes' do   #index
   erb(:'notes/index')
 end
 
+get '/notes/new' do #new
+  @animals = Animal.all()
+  @vets = Vet.all()
+  erb(:'notes/new')
+end
+
 get '/notes/:id' do #show
   note_id = params[:id]
   @note = Note.find(note_id)
@@ -10,7 +16,8 @@ get '/notes/:id' do #show
   erb(:'notes/show')
 end
 
-get '/notes/new' do #new
-  @animals = Animal.all()
-  erb(:'notes/new')
+post '/notes' do #create
+  new_post = Note.new(params)
+  new_post.save()
+  redirect to '/notes'
 end

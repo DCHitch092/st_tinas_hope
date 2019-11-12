@@ -1,20 +1,25 @@
 <h2>Create notes<%= " for #{@animal.animal_name}" if @animal %>:</h2><form class="new_note" action="/notes" method="post">
-  <% if @animal == false %>
-  <label for="animal-id">Animal</label>
-  <select id="animal-id" name="animal_id">
-    <% for animal in @animals %>
-    <option value="<%= animal.id %>"><%= animal.animal_name %></option>
-    <% end %>
-  </select>
+
+  <% if @animal %>
+  <% else %>
+    <label for="animal-id">Animal</label>
+    <select id="animal-id" name="animal_id">
+      <% for animal in @animals %>
+      <option value="<%= animal.id %>"><%= animal.animal_name %></option>
+      <% end %>
+    </select>
   <% end %>
+
   <label for="body">Note:</label>
   <input type="text" name="body" value="body">
+
   <label for="vet-id">Author:</label>
   <select id="vet-id" name="vet_id">
     <% for vet in @vets %>
     <option value="<%= vet.id %>"><%= vet.vet_name %></option>
     <% end %>
   </select>
-  <button type="submit" name="Add note">Add Note</button>
+
+  <button type="submit" name="notes">Add Note</button>
 
 </form>

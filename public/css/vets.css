@@ -1,0 +1,29 @@
+.logo-img {
+  border-radius: 50%;
+  height: 20vh;
+}
+
+.vets-table{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.vet-div{
+  padding: 1% 3% 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 13em;
+  text-align: center;
+
+}
+
+.vet-buttons{
+  padding: 10px 0 0 0;
+}
+
+.deleted{
+  opacity: 0.2;
+  background-color: #cccccc;
+}

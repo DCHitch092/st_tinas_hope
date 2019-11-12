@@ -15,28 +15,28 @@ vet1 = Vet.new(
   { 'vet_name' => 'Nurse Elmo',
     'role' => 'Nurse',
     'fav_colour' => 'rainbow',
-    'profile_image' => 'nurse-elmo.png',
+    'profile_image' => 'nurse-elmo.jpg',
     'deleted' => FALSE})
 
 vet2 = Vet.new(
   { 'vet_name' => 'Nurse ChumChi',
     'role' => 'Nurse',
     'fav_colour' => 'orange',
-    'profile_image' => 'nurse-chumchi.png',
+    'profile_image' => 'nurse-chumchi.jpg',
     'deleted' => FALSE})
 
 unassigned = Vet.new(
   { 'vet_name' => 'Unassigned',
     'role' => 'n/a',
     'fav_colour' => 'n/a',
-    'profile_image' => 'unassigned.png',
+    'profile_image' => 'unassigned.jpg',
     'deleted' => FALSE})
 
 deleted_test = Vet.new(
   { 'vet_name' => 'Timmy',
     'role' => 'Nurse',
     'fav_colour' => 'black',
-    'profile_image' => 'timmy.png',
+    'profile_image' => 'timmy.jpg',
     'deleted' => TRUE})
 
 vet1.save()

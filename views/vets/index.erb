@@ -1,38 +1,53 @@
+<div class="flex-row">
+
 <h1>All The Vets</h1>
-  <div class="content">
 
-    <ul id="vets_table">
+    <div class="vets-table">
 
-    <% for vet in @vets %>
-    <% if vet.id != @unassigned.id %>
-      <li <%= "class=\"row-deleted\"" if vet.deleted == "t" %>>
-        <a href="/vets/<%= vet.id %>"><img src="/images/<%= vet.profile_image %>" alt="image of <%= vet.vet_name %>"></a>
-        <a href="/vets/<%= vet.id %>"><h2><%= vet.vet_name %></h2></a>
-        <p><%= vet.role %></p>
-        <%= "<p>This vet is no longer at this practice</p>" if vet.deleted == "t" %>
-        <p><a href="/vets/<%= vet.id %>/edit">Edit Vet</a></p>
+      <% for vet in @vets %>
 
-          <% if vet.deleted == 'f' %>
-            <form action="/vets/<%= vet.id %>/delete" method="post">
-              <button type="submit" name="button">Delete vet</button>
-            </form>
-          <% else %>
-            <form action="/vets/<%= vet.id %>/reinstate" method="post">
-              <input type="hidden" name="vet_name" value="<%= vet.vet_name %>">
-              <input type="hidden" name="role" value="<%= vet.role %>">
-              <input type="hidden" name="fav_colour" value="<%= vet.fav_colour %>">
-              <input type="hidden" name="profile_image" value="<%= vet.profile_image %>">
-              <input type="hidden" name="deleted" value="f">
+        <% if vet.id != @unassigned.id %>
+          <div class="vet-div">
+            <a  href="/vets/<%= vet.id %>"><img class="logo-img  <%= "deleted" if vet.deleted == "t" %>"src="/images/<%= vet.profile_image %>" alt="image of <%= vet.vet_name %>"></a>
 
-              <button type="submit" name="button">Reinstate</button>
-            </form>
-          <% end %>
+            <a href="/vets/<%= vet.id %>"><h2><%= vet.vet_name %></h2></a>
+
+            <p><%= vet.role %></p>
+            <%= "<p>Vet Deleted</p>" if vet.deleted == "t" %>
+
+            <div class="flex-rows vet-buttons">
+              <div class="button-one">
+                <a href="/vets/<%= vet.id %>/edit">Edit Vet</a>
+              </div>
+
+              <div class="button-two">
+
+
+              <% if vet.deleted == 'f' %>
+                <form action="/vets/<%= vet.id %>/delete" method="post">
+                  <button type="submit" name="button">Delete vet</button>
+                </form>
+              <% else %>
+                <form action="/vets/<%= vet.id %>/reinstate" method="post">
+                  <input type="hidden" name="vet_name" value="<%= vet.vet_name %>">
+                  <input type="hidden" name="role" value="<%= vet.role %>">
+                  <input type="hidden" name="fav_colour" value="<%= vet.fav_colour %>">
+                  <input type="hidden" name="profile_image" value="<%= vet.profile_image %>">
+                  <input type="hidden" name="deleted" value="f">
+
+                  <button type="submit" name="button">Reinstate</button>
+                </form>
+              <% end %>
+              </div>
+
+
+            </div>
+
+          </div>
         <% end %>
-        <hr>
-      </li>
-    <% end %>
-    </ul>
-  </div>
-  <div class="footer">
-    <a href="/vets/new">Add New Vet</a>    
+
+      <% end %>
+
+    </div>
+
   </div>

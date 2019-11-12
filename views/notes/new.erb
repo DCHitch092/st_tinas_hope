@@ -1,0 +1,14 @@
+<form class="new_note" action="/notes/" method="post">
+  <label for="animal-id">Animal</label>
+  <select id="animal-id" name="animal_id">
+    <% for animal in @animals %>
+    <option value="<%= animal.id %>"><%= animal.animal_name %></option>
+    <% end %>
+  </select>
+
+  <label for="body">Note:</label>
+  <input type="text" name="body" value="body">
+
+
+
+</form>

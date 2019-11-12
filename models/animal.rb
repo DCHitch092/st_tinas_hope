@@ -37,7 +37,6 @@ class Animal
       @age = self.get_age()
     end
     self.save()
-    # binding.pry
     return self
   end
 

@@ -3,17 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>St Tina's Hope</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/menu.css">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/"><img src="/images/logo.svg" alt="St Tinas Hope Logo"></a></li>
-        <li><a href="/vets">Vets</a></li>
-        <li><a href="/animals">Animals</a></li>
-        <li><a href="/humans">Humans</a></li>
-        <li><a href="/notes">Notes</a></li>
-        <!-- <li><a href="/medicines">Medicines</a></li> -->
-      </ul>
+
+    <nav class="menu_container">
+
+      <div class="menu">
+
+        <div class ="left">
+          <div class="home"><a href="/">Home</a></div>
+          <div class="vets"><a href="/vets">Vets</a></div>
+          <div class="animals"><a href="/animals">Animals</a></div>
+          </div>
+
+        <div class ="mid">
+          <div class="logo">
+            <a href="/">
+              <img src="/images/logo.svg" alt="St Tinas Hope Logo">
+            </a>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="humans"><a href="/humans">Humans</a></div>
+          <div class="notes"><a href="/notes">Notes</a></div>
+          <div class="notes"><a href="/medicines">Medicines</a></div>
+        </div>
+
+      </div>
+
     </nav>
     <%= yield %>
   </body>

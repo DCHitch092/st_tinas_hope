@@ -1,0 +1,18 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* Colours
+Yellow - #FFCC66;
+Red - #FF6633;
+Green - #66CC99;
+Blue - #3366CC;
+Grey - #CCCCCC;
+pink - #FFCCCC; */
+
+
+a {
+  text-decoration: none;
+}

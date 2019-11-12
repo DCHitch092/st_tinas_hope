@@ -11,7 +11,6 @@ end
 get '/vets/:id' do #show
   @vet_id = params[:id]
   @vet = Vet.find(@vet_id)
-  # binding.pry
   @animals = @vet.get_animals()
   erb(:'vets/show')
 end

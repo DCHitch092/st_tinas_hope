@@ -2,13 +2,9 @@ require_relative('../models/vet')
 require_relative('../models/animal')
 require_relative('../models/human')
 require_relative('../models/note')
-# require_relative('../models/vet_assign')
-# require_relative('../models/human_assign')
 
 require('pry')
 
-# VetAssign.delete_all()
-# HumanAssign.delete_all()
 Note.delete_all()
 Animal.delete_all()
 Vet.delete_all()
@@ -147,41 +143,3 @@ note1 = Note.new(
 note1.save
 note2.save
 note3.save
-
-# vet_assign1 = VetAssign.new({
-#   'animal_id' => animal1.id,
-#   'vet_id' => vet1.id
-#   })
-# vet_assign2 = VetAssign.new({
-#   'animal_id' => animal2.id,
-#   'vet_id' => vet2.id
-#   })
-# vet_assign3 = VetAssign.new({
-#   'animal_id' => animal1.id,
-#   'vet_id' => vet2.id
-#   })
-#
-#   vet_assign1.save()
-#   vet_assign2.save()
-#   vet_assign3.save()
-
-# human_assign1 = HumanAssign.new({
-#   'animal_id' => animal1.id,
-#   'human_id' => human1.id
-#   })
-# human_assign2 = HumanAssign.new({
-#   'animal_id' => animal2.id,
-#   'human_id' => human2.id
-#   })
-# human_assign3 = HumanAssign.new({
-#   'animal_id' => animal1.id,
-#   'human_id' => human2.id
-#   })
-#
-#   human_assign1.save()
-#   human_assign2.save()
-#   human_assign3.save()
-#
-# binding.pry
-#
-# nil

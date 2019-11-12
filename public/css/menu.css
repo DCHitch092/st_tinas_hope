@@ -1,0 +1,86 @@
+/* Menu Link Styling */
+nav {
+  color: #fff;
+  background-color: #FFCC66;  /* light yellow */
+  /* padding: 1em 0; */
+  font-size: 1.4em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+
+}
+
+.menu_container{
+  display: flex;
+    justify-content: space-around;
+}
+
+.menu {
+  /* border: 1px solid red; */
+  /* for debug */
+  /* justify-content: center; */
+  display: flex;
+  justify-content: space-between;
+  /* height: 14vh; */
+  /* width: 60%; */
+  /* flex-wrap: no-wrap; */
+
+  /* height: 10vh; */
+}
+.menu .left{
+  /* border: 1px solid blue; */
+  /* for debug */
+  display: flex;
+  justify-content: center;
+
+  /* width: 33%; */
+}
+
+.menu .mid {
+  /* border: 1px solid blue; */
+  /* for debug */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* width: 15%; */
+}
+
+.menu .right{
+  /* border: 1px solid blue; */
+  /* for debug */
+  display: flex;
+  justify-content: flex-end;
+  /* width: 33%; */
+}
+
+nav .home, nav .vets, nav .animals, nav .humans, nav .notes, nav .medicines{
+  display: flex;
+  padding: 0 4%;
+  align-items: center;
+}
+
+nav .logo {
+  /* border: 1px solid Green; */
+  /* for debug */
+  display:flex;
+  /* align-items: center; */
+  height: 8vh;
+}
+
+.logo img {
+  width:20vh;
+}
+.menu_container a{
+  font-family: 'Playfair Display', serif;
+}
+
+.menu_container a:visited, .menu_container a:link{
+  color:#fff;
+}
+
+.menu_container a:hover, .menu_container a:focus, .menu_container a:active {
+  color: #FF6633;
+}

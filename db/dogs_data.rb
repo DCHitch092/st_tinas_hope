@@ -24,6 +24,26 @@ vet2 = Vet.new(
     'fav_colour' => 'orange',
     'profile_image' => 'nurse-chumchi.jpg',
     'deleted' => FALSE})
+vet3 = Vet.new(
+  { 'vet_name' => 'ChiChiPu',
+    'role' => 'Trainee',
+    'fav_colour' => 'orange',
+    'profile_image' => 'chichipu.jpg',
+    'deleted' => FALSE})
+
+vet4 = Vet.new(
+  { 'vet_name' => 'PiPiChu',
+    'role' => 'Trainee',
+    'fav_colour' => 'orange',
+    'profile_image' => 'pipichu.jpg',
+    'deleted' => FALSE})
+
+vet5 = Vet.new(
+  { 'vet_name' => 'Nurse Beulla',
+    'role' => 'Nurse',
+    'fav_colour' => 'orange',
+    'profile_image' => 'nurse-betulla.jpg',
+    'deleted' => FALSE})
 
 unassigned = Vet.new(
   { 'vet_name' => 'Unassigned',
@@ -41,6 +61,9 @@ deleted_test = Vet.new(
 
 vet1.save()
 vet2.save()
+vet3.save()
+vet4.save()
+vet5.save()
 unassigned.save()
 deleted_test.save()
 
@@ -97,7 +120,61 @@ animal3 = Animal.new(
     'vet_id' => vet2.id})
 
 animal4 = Animal.new(
-  { 'animal_name' => 'PeeChiPu',
+  { 'animal_name' => 'Te-Tina',
+    'date_of_birth' => '',
+    'type' =>  'dog',
+    'fav_colour' => 'blue',
+    'age' => 2,
+    'human_id' => human2.id,
+    'vet_id' => unassigned.id})
+
+animal5 = Animal.new(
+  { 'animal_name' => 'Te-Tina',
+    'date_of_birth' => '',
+    'type' =>  'dog',
+    'fav_colour' => 'blue',
+    'age' => 2,
+    'human_id' => human2.id,
+    'vet_id' => unassigned.id})
+
+animal6 = Animal.new(
+  { 'animal_name' => 'Te-Tim',
+    'date_of_birth' => '',
+    'type' =>  'dog',
+    'fav_colour' => 'blue',
+    'age' => 2,
+    'human_id' => human2.id,
+    'vet_id' => unassigned.id})
+
+animal7 = Animal.new(
+  { 'animal_name' => 'Te-Tina Fe-Fey',
+    'date_of_birth' => '',
+    'type' =>  'dog',
+    'fav_colour' => 'blue',
+    'age' => 2,
+    'human_id' => human2.id,
+    'vet_id' => unassigned.id})
+
+animal8 = Animal.new(
+  { 'animal_name' => 'BoBo',
+    'date_of_birth' => '',
+    'type' =>  'dog',
+    'fav_colour' => 'blue',
+    'age' => 2,
+    'human_id' => human2.id,
+    'vet_id' => unassigned.id})
+
+animal9 = Animal.new(
+  { 'animal_name' => 'ViVi-VaVaVu',
+    'date_of_birth' => '',
+    'type' =>  'dog',
+    'fav_colour' => 'blue',
+    'age' => 2,
+    'human_id' => human2.id,
+    'vet_id' => unassigned.id})
+
+animal11 = Animal.new(
+  { 'animal_name' => 'VaVa-ViViVu',
     'date_of_birth' => '',
     'type' =>  'dog',
     'fav_colour' => 'blue',
@@ -109,6 +186,12 @@ animal1.new_animal()
 animal2.new_animal()
 animal3.new_animal()
 animal4.new_animal()
+animal5.new_animal()
+animal6.new_animal()
+animal7.new_animal()
+animal8.new_animal()
+animal9.new_animal()
+animal11.new_animal()
 
 # timestring1 = 'Wed, 26 May 2017 14:00:00 +0800'
 # Time.parse(string).strftime('%F %T %z')

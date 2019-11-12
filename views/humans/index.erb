@@ -19,7 +19,7 @@
         <tr class="<% table_count += 1 %><%= "even" if table_count.even? %><%= "odd" if table_count.odd? %>">
           <td>
             <a href="/humans/<%= human.id %>">
-              <h2><%= human.human_name %></h2>
+              <h3><%= human.human_name %></h3>
             </a>
           </td>
 
@@ -35,7 +35,7 @@
             <p><%= human.phone %></p>
           </td>
 
-          <td>
+          <td style="color:#fff; opacity:0.4; background-color:<%= human.fav_colour %>">
             <p><%= human.fav_colour %></p>
           </td>
 

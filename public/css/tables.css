@@ -46,8 +46,6 @@ padding: 3em;
   border-radius: 3em;
   border: 3px #fff solid;
   color: #fff;
-
-
 }
 
 #main-index .vets, #main-index .humans{
@@ -55,7 +53,4 @@ padding: 3em;
   border-radius: 3em;
   border: 3px #fff solid;
 
-  color: #fff;
-
-
-}
+  color: #fff;}

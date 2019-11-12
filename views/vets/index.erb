@@ -11,9 +11,21 @@
         <%= "<p>This vet is no longer at this practice</p>" if vet.deleted == "t" %>
         <p><a href="/vets/<%= vet.id %>/edit">Edit Vet</a></p>
 
-      <form action="/vets/<%= vet.id %>/delete" method="post">
-        <button type="submit" name="button">Delete vet</button>
-      </form>
+        <% if vet.deleted == 'f' %>
+          <form action="/vets/<%= vet.id %>/delete" method="post">
+            <button type="submit" name="button">Delete vet</button>
+          </form>
+        <% else %>
+        <form action="/vets/<%= vet.id %>/reinstate" method="post">
+          <input type="hidden" name="vet_name" value="<%= vet.vet_name %>">
+          <input type="hidden" name="role" value="<%= vet.role %>">
+          <input type="hidden" name="fav_colour" value="<%= vet.fav_colour %>">
+          <input type="hidden" name="profile_image" value="<%= vet.profile_image %>">
+          <input type="hidden" name="deleted" value="f">
+
+          <button type="submit" name="button">Reinstate</button>
+        </form>
+        <% end %>
       <% end %>
       <hr></li>
     <% end %>

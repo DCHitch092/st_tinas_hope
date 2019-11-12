@@ -14,7 +14,7 @@ class Note
   end
 
   def save()
-    @timestamp = Time.new
+    @timestamp = Time.new if @timestamp == ''
     sql = "INSERT INTO notes
     ( animal_id, vet_id, body, timestamp)
     VALUES

@@ -3,6 +3,6 @@
 
 <p><%= @note.body %></p>
 <p> written by <a href='/vets/<%= @note.vet_id %>'>#Vet_Name</a> at
-<% @time %></p>
+<%= @note.get_time() %></p>
 
 <a href="/animals/<%= @note.animal_id %>"><< back to animal</a>

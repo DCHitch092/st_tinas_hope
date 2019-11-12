@@ -14,7 +14,7 @@
 <table>
   <% for note in @notes %>
   <tr>
-    <td><a href="/notes/<%= note.id %>"><%= note.timestamp %></a></td>
+    <td><a href="/notes/<%= note.id %>"><%= note.get_time() %></a></td>
     <td><%= note.body %></td>
     <td><a href="<%= note.vet_id %>"><%= note.get_author()['vet_name'] %></a></td>
   </tr>

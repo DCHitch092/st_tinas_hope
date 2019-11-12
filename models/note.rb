@@ -53,7 +53,7 @@ class Note
     return result
   end
 
-  def get_nice_time()
+  def get_time()
     time = self.timestamp
     date = Date.parse time
     return date.strftime("%e %b, %y (%H:%M)")

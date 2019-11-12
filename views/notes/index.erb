@@ -12,9 +12,7 @@
     <td><a href="/animals/<%= note.animal_id %>"><%= note.get_patient()['animal_name'] %></a></td>
     <td><%= note.body %></td>
     <td><a href="/vets/<%= note.vet_id %>"><%= note.get_author()['vet_name'] %></a></td>
-    <td><a href="/notes/<%= note.id %>"><% time = note.timestamp
-     date = Date.parse time
-    %><%= date.strftime("%e %b, %y (%H:%M)") %>
+    <td><a href="/notes/<%= note.id %>"><%= note.get_time() %>
 
       </a></td>
   </tr>

@@ -1,43 +1,44 @@
-<p>Welcome to St. Tina's Hope </p>
-
-<h2>Waiting Queue</h2>
-<p>list of unassigned animals</p>
-<table>
-<tr>
-  <td> Animal Name</td>
-  <td> Human_Name</td>
-  <td> </td>
-</tr>
-  <% for animal in @animals %>
-<tr>
-  <td> <a href="/animals/<%= animal['id'] %>"><%= animal['animal_name'] %></a></td>
-  <td> <a href="/humans/<%= animal['human_id']%>"> <%= animal['human_name'] %></a></td>
-  <td> <a href="/animals/<%= animal['id'] %>/assign">#>Assign vet</a></td>
-</tr>
-<% end %>
-<tr></tr>
-<tr></tr>
-<tr></tr>
-</table>
-
-<table>
-  <tr>
-    <td>
-      <h2><a href="/animals">Animals</a></h2>
-      <p><a href="/animals/new">Create Animal</a></p>
+<div class="two-column-left">
+  <h2>Waiting Queue</h2>
+  <p>list of unassigned animals</p>
+  <table>
+    <tr>
+      <td> Animal Name</td>
+      <td> Human_Name</td>
+      <td> </td>
+    </tr>
+      <% for animal in @animals %>
+    <tr>
+      <td> <a href="/animals/<%= animal['id'] %>"><%= animal['animal_name'] %></a></td>
+      <td> <a href="/humans/<%= animal['human_id']%>"> <%= animal['human_name'] %></a></td>
+      <td> <a href="/animals/<%= animal['id'] %>/assign">#>Assign vet</a></td>
+    </tr>
+    <% end %>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+  </table>
+</div>
+<div class="two-column-right>"<p>Welcome to St. Tina's Hope </p>
+  <table>
+    <tr>
       <td>
-      <h2><a href="/vets">Vets</a></h2>
-      <p><a href="/vets/new">Add new</a></p></td>
-  </tr>
-  <tr>
-    <td>
-      <h2><a href="/humans">Humans</a></h2>
-      <p><a href="/humans/new">Add new</p></td>
-    <td>
-      <h2><a href="/notes">Notes</a></h2>
-      <p><a href="/notes/new">Create Notes</a></p></td>
-  </tr>
-  <!-- <tr>
-    <td><h2>Medicines</h2><p>add new</p></td>
-  </tr> -->
+        <h2><a href="/animals">Animals</a></h2>
+        <p><a href="/animals/new">Create Animal</a></p>
+        <td>
+        <h2><a href="/vets">Vets</a></h2>
+        <p><a href="/vets/new">Add new</a></p></td>
+    </tr>
+    <tr>
+      <td>
+        <h2><a href="/humans">Humans</a></h2>
+        <p><a href="/humans/new">Add new</p></td>
+      <td>
+        <h2><a href="/notes">Notes</a></h2>
+        <p><a href="/notes/new">Create Notes</a></p></td>
+    </tr>
+    <!-- <tr>
+      <td><h2>Medicines</h2><p>add new</p></td>
+    </tr> -->
 </table>
+</div>

@@ -1,11 +1,29 @@
 footer {
   text-align: center;
   position: absolute;
+  background-color:#FFCC66;
+  color: #FF6633;
+  display: flex;
+  justify-content: center;
     bottom: 0;
     width: 100%;
     height; 10vh;
     /* display:flex;
     justify-content: center; */
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+}
+
+footer a:focus, a:hover {
+  color:#FF6633;
+}
+
+footer h3, footer h4 {
+  font-family: 'Playfair Display', serif;
 }
 
 footer h3 {
@@ -15,18 +33,25 @@ footer h3 {
 
 footer h4 { margin-top: 5%;}
 
+
 footer .span {
+  /* width: 30%; */
   text-align: center;
   justify-content: center;
+  align-items: center;
   margin: 1% 0 1% 0 ;}
+
+footer .span div {
+  margin: 0 1% 0 0;
+
+}
 
 footer .footer-container{
   display:flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 00%;
-  background-color:#FFCC66;
-  color: #FF6633;
+  margin-bottom: 0%;
+  width: 80%;
 }
 
 .footer-columns {
@@ -41,22 +66,26 @@ footer .footer-one, footer .footer-two, footer .footer-three, footer .footer-fou
 }
 
 footer .footer-one{
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   /* debug */
 }
 
-footer .footer-two{ border: 1px solid yellow;
-/* debug */}
+footer .footer-two{
+  /* border: 1px solid yellow; */
+  /* debug */}
 
-footer .footer-three{border: 1px solid yellow;
+footer .footer-three{
+  /* border: 1px solid yellow; */
 /* debug */
 }
 
-footer .footer-four{border: 1px solid yellow;
+footer .footer-four{
+  /* border: 1px solid yellow; */
 /* debug */
 }
 
-footer .span {border: 1px solid yellow;
-/* debug */
-display: flex;
+footer .span {
+  /* border: 1px solid yellow; */
+  /* debug */
+  display: flex;
 }

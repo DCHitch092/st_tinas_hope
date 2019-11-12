@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
 .body-container{
   display:flex;
   justify-content: center;

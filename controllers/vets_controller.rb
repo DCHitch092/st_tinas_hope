@@ -40,7 +40,7 @@ post '/vets/:id/delete' do #delete
   redirect to '/vets'
 end
 
-post '/vets/:id/reinstate' do #update
+post '/vets/:id/reinstate' do #update-reinstate
   Vet.new(params).update()
   redirect to '/vets'
 end

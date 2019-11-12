@@ -11,7 +11,7 @@ CREATE TABLE vets(
   role          VARCHAR(255),
   fav_colour    VARCHAR(255),
   profile_image VARCHAR(255),
-  deleted       BOOLEAN 
+  deleted       BOOLEAN
 );
 
 CREATE TABLE humans(
@@ -36,7 +36,7 @@ CREATE TABLE animals(
 
 CREATE TABLE notes(
   id        SERIAL4 PRIMARY KEY,
-  animal_id INT4 REFERENCES animals(id),
+  animal_id INT4 REFERENCES animals(id) ON DELETE CASCADE,
   vet_id    INT4,
   body      TEXT,
   timestamp VARCHAR(255)

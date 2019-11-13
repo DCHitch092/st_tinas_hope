@@ -1,0 +1,18 @@
+#main-index td{
+padding: 3em;
+
+}
+
+#main-index .animals, #main-index .notes{
+  background-color: #3366CC;
+  border-radius: 3em;
+  border: 3px #fff solid;
+  color: #fff;
+}
+
+#main-index .vets, #main-index .humans{
+  background-color: #66CC99;
+  border-radius: 3em;
+  border: 3px #fff solid;
+
+  color: #fff;}

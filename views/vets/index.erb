@@ -1,4 +1,6 @@
-<div class="flex-row">
+<div class="vets-container">
+
+<div class="flex-row ">
 
 <h1>All The Vets</h1>
 
@@ -8,7 +10,7 @@
 
         <% if vet.id != @unassigned.id %>
           <div class="vet-div">
-            <a  href="/vets/<%= vet.id %>"><img class="logo-img  <%= "deleted" if vet.deleted == "t" %>"src="/images/<%= vet.profile_image %>" alt="image of <%= vet.vet_name %>"></a>
+            <a  href="/vets/<%= vet.id %>"><img class="logo-img  <%= "deleted" if vet.deleted == "t" %>"src="/images/<%= vet.profile_image %>" alt="image of <%= vet.vet_name %>" style="border: 10px solid <%= vet.fav_colour %>"></a>
 
             <a href="/vets/<%= vet.id %>"><h2><%= vet.vet_name %></h2></a>
 
@@ -51,3 +53,4 @@
     </div>
 
   </div>
+</div>

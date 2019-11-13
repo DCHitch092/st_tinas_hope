@@ -109,6 +109,24 @@ animal1 = Animal.new(
     'human_id' => human1.id,
     'vet_id' => vet1.id})
 
+fish1 = Animal.new(
+  { 'animal_name' => 'Kleinefinger',
+    'date_of_birth' => '',
+    'type' =>  'fish',
+    'fav_colour' => 'unknown',
+    'age' => 3,
+    'human_id' => human1.id,
+    'vet_id' => vet1.id})
+
+bird1 = Animal.new(
+  { 'animal_name' => 'Squilbo',
+    'date_of_birth' => '',
+    'type' =>  'bird',
+    'fav_colour' => 'unknown',
+    'age' => 3,
+    'human_id' => human1.id,
+    'vet_id' => vet1.id})
+
 animal2 = Animal.new(
   { 'animal_name' => 'PaPaPiPi-Pu',
     'date_of_birth' => '2012-05-15',
@@ -190,6 +208,8 @@ animal11 = Animal.new(
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
 
+
+
 animal1.new_animal()
 animal2.new_animal()
 animal3.new_animal()
@@ -200,6 +220,8 @@ animal7.new_animal()
 animal8.new_animal()
 animal9.new_animal()
 animal11.new_animal()
+fish1.new_animal()
+bird1.new_animal()
 
 # timestring1 = 'Wed, 26 May 2017 14:00:00 +0800'
 # Time.parse(string).strftime('%F %T %z')

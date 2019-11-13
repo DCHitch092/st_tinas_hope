@@ -1,3 +1,8 @@
+.vets-container{
+  width: 80%;
+  /* height: 2vh; */
+}
+
 .logo-img {
   border-radius: 50%;
   height: 20vh;
@@ -6,6 +11,7 @@
 .vets-table{
   display: flex;
   justify-content: space-evenly;
+  flex-wrap:wrap;
 }
 
 .vet-div{
@@ -16,6 +22,7 @@
   flex-direction: column;
   width: 13em;
   text-align: center;
+  flex: 1 0 21%;
 
 }
 

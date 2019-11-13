@@ -4,8 +4,7 @@ require_relative('../models/vet')
 
 class Animal
 
-  attr_accessor :human_id
-  attr_reader :id, :animal_name, :date_of_birth, :type, :fav_colour, :age, :vet_id
+  attr_reader :id, :animal_name, :date_of_birth, :type, :fav_colour, :age, :vet_id, :human_id
 
 
   def initialize(options)
@@ -122,10 +121,10 @@ class Animal
 
   def self.waiting_room()
     vet = Vet.find_unassigned()
-    sql = "SELECT * From animals
+    sql = "SELECT animals.id, animals.animal_name, humans.human_name From animals
     INNER JOIN humans
     on animals.human_id = humans.id
-    WHERE vet_id = $1"
+    WHERE animals.vet_id = $1"
     values = [vet.id]
     result = SqlRunner.run(  sql, values)
     # return result.map{|animal| Animal.new(animal)}

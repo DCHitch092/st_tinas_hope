@@ -36,21 +36,7 @@ td{
   padding: 0.2em;
 }
 
-#main-index td{
-padding: 3em;
-
+td.fav_colour{
+  color:#000;
+  opacity:0.4;
 }
-
-#main-index .animals, #main-index .notes{
-  background-color: #3366CC;
-  border-radius: 3em;
-  border: 3px #fff solid;
-  color: #fff;
-}
-
-#main-index .vets, #main-index .humans{
-  background-color: #66CC99;
-  border-radius: 3em;
-  border: 3px #fff solid;
-
-  color: #fff;}

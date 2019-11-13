@@ -1,6 +1,14 @@
-#main-index td{
-padding: 3em;
+table#main-index {
+    border: 0px;
+  }
 
+tr.main {
+  border: 0;
+  border-bottom:0;
+}
+td.main {
+padding: 3em;
+border: 0;
 }
 
 #main-index .animals, #main-index .notes{

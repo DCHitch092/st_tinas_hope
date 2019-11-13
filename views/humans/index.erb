@@ -40,11 +40,11 @@
           </td>
 
           <td>
-            <a href="/humans/<%= human.id %>/edit">edit</a>
+            <a class="table-button button"href="/humans/<%= human.id %>/edit">edit</a>
           </td>
           <td>
             <form action="/humans/<%= human.id %>/delete" method="post">
-              <button type="submit" name="button">Delete Human</button>
+              <button class="table-button button"type="submit" name="button">Delete Human</button>
             </form>
           </td>
         </tr>
@@ -53,7 +53,7 @@
   </table>
 
   <div class="span" id="human-add">
-    <a href="/humans/new">Add New Human</a>
+    <a href="/humans/new" class="button">Add New Human</a>
 
   </div>
 

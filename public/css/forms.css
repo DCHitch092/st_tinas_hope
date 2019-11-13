@@ -1,0 +1,24 @@
+.new_form{
+  display:flex;
+  flex-direction: row;
+}
+
+form.animals{
+  display:flex;
+  flex-direction: row;
+}
+
+.label-left{
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+}
+
+.label-top{
+  display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 3%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

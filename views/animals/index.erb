@@ -40,7 +40,7 @@
 background-size: 33.94px 33.94px;" if animal.animal_name == "BoBo"  %> background-color:<%= animal.fav_colour %>"><p><%= animal.fav_colour %></p></td>
       <td><a class="table-button button" href="/animals/<%= animal.id %>/edit">edit</a></td>
       <td><form action="/animals/<%= animal.id %>/delete" method="post">
-        <button class="table-button button" type="submit" name="button">Delete animal</button>
+        <button class="table-button button" type="submit" name="button">Delete</button>
       </form></td>
     </tr>
     <% end %>

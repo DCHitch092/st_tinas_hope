@@ -1,6 +1,6 @@
 <div class="vets-container">
 
-<div class="flex-row ">
+<div class="flex-columns">
 
 <h1>All The Vets</h1>
 
@@ -13,14 +13,14 @@
             <a  href="/vets/<%= vet.id %>"><img class="logo-img <%= "background: linear-gradient(45deg, #f00e0e 8.33%, #ff9100 8.33%, #ff9100 16.67%, #ffe100 16.67%, #ffe100 25%, #11ff00 25%, #11ff00 33.33%, #0077ff 33.33%, #0077ff 41.67%, #c225ad 41.67%, #c225ad 50%, #f00e0e 50%, #f00e0e 58.33%, #ff9100 58.33%, #ff9100 66.67%, #ffe100 66.67%, #ffe100 75%, #11ff00 75%, #11ff00 83.33%, #0077ff 83.33%, #0077ff 91.67%, #c225ad 91.67%, #c225ad 100%);
 background-size: 169.71px 169.71px;" if vet.vet_name == "Nurse Elmo" %> <%= "deleted" if vet.deleted == "t" %>"src="/images/<%= vet.profile_image %>" alt="image of <%= vet.vet_name %>" style="border: 10px solid <%= vet.fav_colour %>"></a>
 
-            <a href="/vets/<%= vet.id %>"><h2><%= vet.vet_name %></h2></a>
+            <a href="/vets/<%= vet.id %>"><p class="vet-name"><%= vet.vet_name %></p></a>
 
             <p><%= vet.role %></p>
-            <%= "<p>Vet Deleted</p>" if vet.deleted == "t" %>
+            <%# <%= "<p>Vet Deleted</p>" if vet.deleted == "t" %>
 
             <div class="flex-rows vet-buttons">
               <div class="button-one">
-                <a class="button"href="/vets/<%= vet.id %>/edit">Edit Vet</a>
+                <a class="button" href="/vets/<%= vet.id %>/edit">Edit</a>
               </div>
 
               <div class="button-two">
@@ -28,7 +28,7 @@ background-size: 169.71px 169.71px;" if vet.vet_name == "Nurse Elmo" %> <%= "del
 
               <% if vet.deleted == 'f' %>
                 <form action="/vets/<%= vet.id %>/delete" method="post">
-                  <button class="button" type="submit" name="button">Delete vet</button>
+                  <button class="vet-delete" type="submit" name="button">Delete</button>
                 </form>
               <% else %>
                 <form action="/vets/<%= vet.id %>/reinstate" method="post">
@@ -38,7 +38,7 @@ background-size: 169.71px 169.71px;" if vet.vet_name == "Nurse Elmo" %> <%= "del
                   <input type="hidden" name="profile_image" value="<%= vet.profile_image %>">
                   <input type="hidden" name="deleted" value="f">
 
-                  <button class="button" type="submit" name="button">Reinstate</button>
+                  <button class="vet-reinstate" type="submit" name="button">Reinstate</button>
                 </form>
               <% end %>
               </div>

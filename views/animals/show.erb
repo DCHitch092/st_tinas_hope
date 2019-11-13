@@ -1,12 +1,22 @@
-<h1>Name: <%= @animal.animal_name %></h1>
-<p><%= @animal.type %></p>
-<p>Favourite Colour: <%= @animal.fav_colour %></p>
-<p>D/O/B: <%= @animal.date_of_birth %></p>
-<p>Age: <%= @animal.age %></p>
+<div class="flex-row">
 
-<p><a href="/animals/<%= @animal.id %>/edit">Edit animal</a></p>
-<p><a href="/animals/<%= @animal.id %>/assign-vet">Assign Vet</a></p>
-<p><a href="/animals/<%= @animal.id %>/assign-human">Assign Human</a></p>
+<h1>Name: <%= @animal.animal_name %></h1>
+<p><b>Type</b>: <%= @animal.type %></p>
+<p><b>Favourite Colour</b>: <%= @animal.fav_colour %></p>
+<p><b>D/O/B</b>: <%= @animal.date_of_birth %></p>
+<p><b>Age</b>: <%= @animal.age %></p>
+
+
+
+<div class="flex-rows flex-align-items-center space-evenly">
+  <a class="non-button show" href="/animals/<%= @animal.id %>/edit">Edit</a>
+   <a class="non-button show"href="/animals/<%= @animal.id %>/assign-vet">Assign Vet</a>
+  <a class="non-button show"href="/animals/<%= @animal.id %>/assign-human">Assign Human</a>
+  <form action="/animals/<%= @animal.id %>/delete" method="post">
+    <button class="button show" type="submit" name="button">Delete</button>
+
+  </form>
+</div>
 
 <hr>
 
@@ -24,7 +34,5 @@
 <hr>
 
 <a href="/animals"><< back to all animals</a>
-<form action="/animals/<%= @animal.id %>/delete" method="post">
-  <button type="submit" name="button">Delete animal</button>
 
-</form>
+</div>

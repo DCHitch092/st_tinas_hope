@@ -36,7 +36,8 @@
           <td  ><p>
           <a href="/vets/<%= vet['id'] %>"><%= vet['vet_name'] %></a></p>
         <% end %></td>
-      <td style="color:#fff; opacity:0.4; background-color:<%= animal.fav_colour %>"><p><%= animal.fav_colour %></p></td>
+      <td style="color:#fff; <%= "background-image: linear-gradient(45deg, red 16.67%, white 16.67%, white 50%, red 50%, red 66.67%, white 66.67%, white 100%);
+background-size: 33.94px 33.94px;" if animal.animal_name == "BoBo"  %>opacity:0.4; background-color:<%= animal.fav_colour %>"><p><%= animal.fav_colour %></p></td>
       <td><a href="/animals/<%= animal.id %>/edit">edit</a></td>
       <td><form action="/animals/<%= animal.id %>/delete" method="post">
         <button type="submit" name="button">Delete animal</button>

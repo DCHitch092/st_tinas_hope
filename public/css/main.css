@@ -4,15 +4,15 @@ padding: 3em;
 }
 
 #main-index .animals, #main-index .notes{
-  background-color: #3366CC;
+  background-color: #CCFFCC;
   border-radius: 3em;
-  border: 3px #fff solid;
+  /* border: 3px #3366CC solid; */
   color: #fff;
 }
 
 #main-index .vets, #main-index .humans{
   background-color: #66CC99;
   border-radius: 3em;
-  border: 3px #fff solid;
+  /* border: 3px #3366CC solid; */
 
   color: #fff;}

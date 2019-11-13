@@ -104,7 +104,8 @@ animal1 = Animal.new(
   { 'animal_name' => 'PiPiPaPa-Pu',
     'date_of_birth' => '2012-05-15',
     'type' =>  'dog',
-    'fav_colour' => 'beige',
+    'fav_colour' => '#f5f5dc',
+    # beige
     'age' => 7,
     'human_id' => human1.id,
     'vet_id' => vet1.id})
@@ -131,7 +132,8 @@ animal2 = Animal.new(
   { 'animal_name' => 'PaPaPiPi-Pu',
     'date_of_birth' => '2012-05-15',
     'type' =>  'dog',
-    'fav_colour' => 'cream',
+    'fav_colour' => '#fffdd0',
+    # cream
     'age' => 7,
     'human_id' => human1.id,
     'vet_id' => vet2.id})
@@ -149,7 +151,8 @@ animal4 = Animal.new(
   { 'animal_name' => 'Te-Tina',
     'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'baby blue',
+    'fav_colour' => '#89cff0',
+    # baby blue
     'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
@@ -158,7 +161,8 @@ animal5 = Animal.new(
   { 'animal_name' => 'Te-Tina',
     'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'sky blue',
+    'fav_colour' => '#00bfff',
+    # sky blue
     'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
@@ -167,7 +171,8 @@ animal6 = Animal.new(
   { 'animal_name' => 'Te-Tim',
     'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'navy blue',
+    'fav_colour' => '#808000',
+    # navy blue
     'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
@@ -176,7 +181,8 @@ animal7 = Animal.new(
   { 'animal_name' => 'Te-Tina Fe-Fey',
     'date_of_birth' => '2015-11-15',
     'type' =>  'dog',
-    'fav_colour' => 'royal blue',
+    'fav_colour' => '#4169e1',
+    # royal blue
     'age' => 4,
     'human_id' => human2.id,
     'vet_id' => unassigned.id})
@@ -186,6 +192,7 @@ animal8 = Animal.new(
     'date_of_birth' => '2017-06-03',
     'type' =>  'dog',
     'fav_colour' => 'red and white stripey',
+    # red and white stripe
     'age' => '2',
     'human_id' => human2.id,
     'vet_id' => unassigned.id})

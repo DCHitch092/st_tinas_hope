@@ -1,38 +1,49 @@
-<div class="flex-row">
+<div class="flex-row min-width-80">
 
-<h1>Name: <%= @animal.animal_name %></h1>
-<p><b>Type</b>: <%= @animal.type %></p>
-<p><b>Favourite Colour</b>: <%= @animal.fav_colour %></p>
-<p><b>D/O/B</b>: <%= @animal.date_of_birth %></p>
-<p><b>Age</b>: <%= @animal.age %></p>
+  <h1>Name: <%= @animal.animal_name %></h1>
+  <p><b>Type</b>: <%= @animal.type %></p>
+  <p><b>Favourite Colour</b>: <%= @animal.fav_colour %></p>
+  <p><b>D/O/B</b>: <%= @animal.date_of_birth %></p>
+  <p><b>Age</b>: <%= @animal.age %></p>
 
 
 
-<div class="flex-rows flex-align-items-center space-evenly">
-  <a class="non-button show" href="/animals/<%= @animal.id %>/edit">Edit</a>
-   <a class="non-button show"href="/animals/<%= @animal.id %>/assign-vet">Assign Vet</a>
-  <a class="non-button show"href="/animals/<%= @animal.id %>/assign-human">Assign Human</a>
-  <form action="/animals/<%= @animal.id %>/delete" method="post">
-    <button class="button show" type="submit" name="button">Delete</button>
+  <div class="flex-rows flex-align-items-center space-evenly space-above space-below">
 
-  </form>
-</div>
+    <a class="non-button show" href="/animals/<%= @animal.id %>/edit">Edit</a>
+    <a class="non-button show"href="/animals/<%= @animal.id %>/assign-vet">Assign Vet</a>
+    <a class="non-button show"href="/animals/<%= @animal.id %>/assign-human">Assign Human</a>
 
-<hr>
+    <form action="/animals/<%= @animal.id %>/delete" method="post">
+      <button class="button show" type="submit" name="button">Delete</button></form>
 
-<h2>Notes</h2>
-<table>
-  <% for note in @notes %>
-  <tr>
-    <td><a href="/notes/<%= note.id %>"><%= note.get_time() %></a></td>
-    <td><%= note.body %></td>
-    <td><a href="<%= note.vet_id %>"><%= note.get_author()['vet_name'] %></a></td>
-  </tr>
-  <% end %>
-</table>
+  </div>
 
-<hr>
+  <div class="flex-columns">
+    <h2>Notes</h2>
 
-<a href="/animals"><< back to all animals</a>
+    <div class="notes-container">
+    <% for note in @notes %>
+
+      <div class="note-display">
+
+        <div class="note-body">
+          <%= note.body %>
+        </div>
+
+        <div class="space-below note-meta">
+          <a class="note-id" href="/notes/<%= note.id %>"><%= note.get_time() %></a>
+          <a class="note-author" href="<%= note.vet_id %>"><%= note.get_author()['vet_name'] %></a>
+        </div>
+
+      </div>
+    <% end %>
+    </div>
+
+  </div>
+
+  <div class="span">
+    <a href="/animals"><< back to all animals</a>
+  </div>
 
 </div>

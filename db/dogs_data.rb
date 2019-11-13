@@ -238,7 +238,7 @@ note3 = Note.new(
   {
     'animal_id' => animal1.id,
     'vet_id' => vet1.id,
-    'body' => "looks much better, thanks to the strawberries",
+    'body' => "looks unwell, maybe needs strawberries",
     'timestamp' => "2019-09-20 09:00:00 +0000"
   }
 )
@@ -255,7 +255,7 @@ note1 = Note.new(
   {
     'animal_id' => animal1.id,
     'vet_id' => vet2.id,
-    'body' => "looks unwell, maybe needs strawberries",
+    'body' => "looks much better, thanks to the strawberries",
     'timestamp' => "2019-10-26 17:23:00 +0000"
   }
 )

@@ -1,27 +1,51 @@
-<h1>Name: <%= @vet.vet_name %></h1>
-<%= "<p>This vet is no longer at this hospital.</p>" if @vet.deleted == 't' %>
-<p><%= @vet.role %></p>
-<img src="/images/<%= @vet.profile_image %>">
-<p>Favourite Colour: <%= @vet.fav_colour %></p>
+<div class="flex-row min-width-80">
 
-<p><a href="/vets/<%= @vet.id %>/edit">Edit Vet</a></p>
-<hr>
-<h2>Assigned Animals</h2>
-<table>
-  <% for animal in @animals %>
-  <tr>
-    <td><a href="/animals/<%= animal['id'] %>"><%= animal['animal_name'] %></a></td>
-    <td><%= animal['age'] %></td>
-    <td><%= animal['date_of_birth'] %></td>
-    <td><%= animal['human_name'] %></td>
-    <td><a href="/animals/<%= animal['id'] %>/notes"> View Notes</a></td>
-    <td>#Medicines</td>
-    <td>#Unassign</td>
-  </tr>
-  <% end %>
-</table>
+  <div class="flex-rows vet-container">
 
-<a href="/vets"><< return to all vets</a>
-<form class="vet-delete" action="/vets/<%= @vet.id %>/delete" method="post">
-  <button type="submit" name="vet-delete" value="vet_delete">Delete Vet</button>
-</form>
+    <div class="vet-image">
+      <img class="logo-img" src="/images/<%= @vet.profile_image %>">
+    </div>
+
+    <div class="flex-columns">
+        <h1><%= @vet.vet_name %></h1>
+    <div class="flex-rows">
+
+
+      <%= "<p>This vet is no longer at this hospital.</p>" if @vet.deleted == 't' %>
+
+      <p><%= @vet.role %></p>
+
+      <p><b>Favourite Colour:</b> <%= @vet.fav_colour %></p>
+
+      <a class="button" href="/vets/<%= @vet.id %>/edit">Edit Vet</a>
+
+      <form class="vet-delete" action="/vets/<%= @vet.id %>/delete" method="post">
+        <button class="button" type="submit" name="vet-delete" value="vet_delete">Delete Vet</button>
+      </form>
+      </div>
+      <div class="vet-assigned-animals-table">
+
+        <h2>Assigned Animals</h2>
+
+        <table>
+          <% for animal in @animals %>
+          <tr>
+            <td><a href="/animals/<%= animal['id'] %>"><%= animal['animal_name'] %></a></td>
+            <td><%= animal['age'] %></td>
+            <td><%= animal['date_of_birth'] %></td>
+            <td><%= animal['human_name'] %></td>
+            <td><a href="/animals/<%= animal['id'] %>/notes"> View Notes</a></td>
+            <td>#Unassign</td>
+          </tr>
+          <% end %>
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <a href="/vets"><< return to all vets</a>
+
+</div>

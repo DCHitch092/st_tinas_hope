@@ -31,3 +31,9 @@ or words to that effect, and now the app should be up and running.
 To view the app, use your browser to visit http://localhost:4567/.
 
 The port may depend on your set-up, but will be indicated in the above message (e.g. 4567).
+
+To close the app, in the terminal/command line press ctrl+c, and Sinatra should tell you it has ended with the message 
+
+```
+== Sinatra has ended his set (crowd applauds)
+```
